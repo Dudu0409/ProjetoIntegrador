@@ -41,7 +41,6 @@ module.exports = {
           { nome: { $regex: req.params.filtro, $options: "i" } },
           { email: { $regex: req.params.filtro, $options: "i" } },
           { tipo: { $regex: req.params.filtro, $options: "i" } },
-          { dataNascimento: { $regex: req.params.filtro, $options: "i" } },
         ],
       },
       function (err, obj) {
