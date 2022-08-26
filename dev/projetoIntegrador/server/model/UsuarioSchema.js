@@ -5,7 +5,8 @@ const UsuarioSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   senha: { type: String, required: true },
   tipo: { type: String, default: 'normal' },
-  dataNascimento: {type: Date, required: true}
+  dataNascimento: {type: Date, required: true},
+  dataCadastro: {type: Date, default: Date.now}
 });
 // UsuarioSchema.methods.generateAuthToken = function () {
 //   const token = jwt.sign(

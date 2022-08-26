@@ -1,12 +1,12 @@
-@apiUrl = http://localhost:3000/api
+@apiUrl = http://localhost:3000/api/usuarios
 
 # Listar usuários
-GET {{apiUrl}}/usuarios
+GET {{apiUrl}}
 Content-Type: application/json
 ###
 
 # Inserir novo usuário
-POST {{apiUrl}}/usuarios
+POST {{apiUrl}}
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 ###
 
 # Alterar usuário
-PUT {{apiUrl}}/usuarios
+PUT {{apiUrl}}
 Content-Type: application/json
 
 {
@@ -31,22 +31,22 @@ Content-Type: application/json
 
 ###
 # Excluir um usuário
-DELETE {{apiUrl}}/usuarios/63080c22b0b2d0e988a0bad2
+DELETE {{apiUrl}}/630811b1ccc973e7cdd890e3
 Content-Type: application/json
 ###
 
 # Obter pelo id do usuário
-GET {{apiUrl}}/usuarios/63080d1bb0b2d0e988a0bae4
+GET {{apiUrl}}/63080d1bb0b2d0e988a0bae4
 Content-Type: application/json
 
 ###
 # Obter usuário filtrando
-GET {{apiUrl}}/usuarios/filtro/185961
+GET {{apiUrl}}/filtro/185961
 Content-Type: application/json
 ###
 
 # Autenticação de usuário
-POST {{apiUrl}}/usuarios/login
+POST {{apiUrl}}/login
 Content-Type: application/json
 
 {
