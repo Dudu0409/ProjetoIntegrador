@@ -3,7 +3,6 @@ const routes = Router();
 
 var cors = require("cors");
 routes.use(cors({ origin: "*" }));
-// routes.use(cors({origin: 'http://localhost:3001'}));
 
 // const loginRout = require("./LoginRout");
 // routes.use("/api", loginRout);
@@ -32,8 +31,6 @@ routes.use(cors({ origin: "*" }));
 //     res.status(400).send("Erro no token de autenticação!");
 //   }
 // });
-
-// rotas para cada módulo
 const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 module.exports = routes;
