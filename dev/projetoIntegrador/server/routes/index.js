@@ -39,4 +39,8 @@ const generoRout = require("./GeneroRout");
 routes.use("/api", generoRout);
 const tipoMidiaRout = require("./TipoMidiaRout");
 routes.use("/api", tipoMidiaRout);
+const produtoRout = require("./ProdutoRout");
+routes.use("/api", produtoRout);
+const produtoUsuarioRout = require("./ProdutoUsuarioRout");
+routes.use("/api", produtoUsuarioRout);
 module.exports = routes;

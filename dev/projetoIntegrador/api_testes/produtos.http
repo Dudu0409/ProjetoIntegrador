@@ -1,0 +1,54 @@
+@apiUrl = http://localhost:3000/api/produtos
+
+# Listar produtos
+GET {{apiUrl}}
+Content-Type: application/json
+###
+
+# Inserir novo produto
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+ "titulo": "Eu Sou a Lenda", 
+ "resumo": "Nada", 
+ "restricaoIdade": 16, 
+ "dataLancamento": "04/09/2009",
+ "numeroCronologico": 1,
+ "tipoMidia": "6311476169d1c67ca24f2da8",
+ "autor": "631143b2dadef46c7db2a348",
+ "genero": "631145c02f99a21fe4f79143"
+}
+###
+
+# Alterar produto
+PUT {{apiUrl}}
+Content-Type: application/json
+
+{
+ "_id": "631151ac2e904763195fedc9",
+ "titulo": "Eu Sou a Lenda Editado", 
+ "resumo": "Nada Editado", 
+ "restricaoIdade": 16, 
+ "dataLancamento": "04/09/2009",
+ "numeroCronologico": 1,
+ "tipoMidia": "6311476169d1c67ca24f2da8",
+ "autor": "631143b2dadef46c7db2a348",
+ "genero": "631145c02f99a21fe4f79143"
+}
+
+###
+# Excluir um produto
+DELETE {{apiUrl}}/6311523e23f1d6f5db9991e3
+Content-Type: application/json
+###
+
+# Obter pelo id do produto
+GET {{apiUrl}}/631151ac2e904763195fedc9
+Content-Type: application/json
+
+###
+# Obter produtos filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+###

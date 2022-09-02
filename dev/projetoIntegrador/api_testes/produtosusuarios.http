@@ -1,0 +1,46 @@
+@apiUrl = http://localhost:3000/api/produtosusuarios
+
+# Listar produtos de usuários
+GET {{apiUrl}}
+Content-Type: application/json
+###
+
+# Inserir novo produtos de usuários
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+ "status": "Em Andamento", 
+ "nota": 9.8, 
+ "produto": "6311518d2e904763195fedc3",
+ "usuario": "63081231de51fac3d19860c7"
+}
+###
+
+# Alterar produtos de usuários
+PUT {{apiUrl}}
+Content-Type: application/json
+
+{
+ "_id": "631155047dc28eb285d86489",
+ "status": "Em Andamento Editado", 
+ "nota": 9.9, 
+ "produto": "6311518d2e904763195fedc3",
+ "usuario": "63081231de51fac3d19860c7"
+}
+
+###
+# Excluir produtos de usuários
+DELETE {{apiUrl}}/631155047dc28eb285d86489
+Content-Type: application/json
+###
+
+# Obter pelo id de produtos de usuários
+GET {{apiUrl}}/631155047dc28eb285d86489
+Content-Type: application/json
+
+###
+# Obter produtos de usuários filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+###

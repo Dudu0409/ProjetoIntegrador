@@ -27,7 +27,7 @@ Content-Type: application/json
 
 ###
 # Excluir um autor
-DELETE {{apiUrl}}/631143f1dadef46c7db2a353
+DELETE {{apiUrl}}/63114d6755c23104eed04967
 Content-Type: application/json
 ###
 
