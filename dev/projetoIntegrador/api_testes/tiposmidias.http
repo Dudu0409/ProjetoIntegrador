@@ -1,0 +1,40 @@
+@apiUrl = http://localhost:3000/api/tiposmidias
+
+# Listar Tipos de Mídias
+GET {{apiUrl}}
+Content-Type: application/json
+###
+
+# Inserir novo Tipo de Mídia
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+ "nome": "Filme"
+}
+###
+
+# Alterar Tipo de Mídia
+PUT {{apiUrl}}
+Content-Type: application/json
+
+{
+ "_id": "6311474c69d1c67ca24f2da2",
+ "nome": "Filme Editado"
+}
+
+###
+# Excluir um Tipo de Mídia
+DELETE {{apiUrl}}/6311474c69d1c67ca24f2da2
+Content-Type: application/json
+###
+
+# Obter pelo id do Tipo de Mídia
+GET {{apiUrl}}/6311476169d1c67ca24f2da8
+Content-Type: application/json
+
+###
+# Obter Tipos de Mídias filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+###

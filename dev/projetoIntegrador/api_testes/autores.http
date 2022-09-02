@@ -1,0 +1,42 @@
+@apiUrl = http://localhost:3000/api/autores
+
+# Listar autores
+GET {{apiUrl}}
+Content-Type: application/json
+###
+
+# Inserir novo autor
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+ "nome": "Fulano", 
+ "dataNascimento": "04/09/2001"
+}
+###
+
+# Alterar autor
+PUT {{apiUrl}}
+Content-Type: application/json
+
+{
+ "_id": "631143dedadef46c7db2a34f",
+ "nome": "Fulano Editado", 
+ "dataNascimento": "04/09/2001"
+}
+
+###
+# Excluir um autor
+DELETE {{apiUrl}}/631143f1dadef46c7db2a353
+Content-Type: application/json
+###
+
+# Obter pelo id do autor
+GET {{apiUrl}}/631143dedadef46c7db2a34f
+Content-Type: application/json
+
+###
+# Obter autores filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+###

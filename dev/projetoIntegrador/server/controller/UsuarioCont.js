@@ -5,7 +5,7 @@ module.exports = {
   listar: async (req, res) => {
     Usuario.find((err, objetos) => {
       err ? res.status(400).send(err) : res.status(200).json(objetos);
-    }).sort({ nome: 1 }); // -1 decrescente 1 crescente
+    }).sort({ nome: 1 });
   },
 
   incluir: async (req, res) => {
@@ -46,6 +46,6 @@ module.exports = {
       function (err, obj) {
         err ? res.status(400).send(err) : res.status(200).json(obj);
       }
-    ).sort({ nome: -1 }); // -1 decrescente 1 crescente
+    ).sort({ nome: -1 });
   },
 };

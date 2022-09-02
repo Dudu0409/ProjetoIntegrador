@@ -1,0 +1,40 @@
+@apiUrl = http://localhost:3000/api/generos
+
+# Listar gêneros
+GET {{apiUrl}}
+Content-Type: application/json
+###
+
+# Inserir novo gênero
+POST {{apiUrl}}
+Content-Type: application/json
+
+{
+ "descricao": "Ficção"
+}
+###
+
+# Alterar gênero
+PUT {{apiUrl}}
+Content-Type: application/json
+
+{
+ "_id": "6311459b2f99a21fe4f7913e",
+ "descricao": "Ficção Editada"
+}
+
+###
+# Excluir um gênero
+DELETE {{apiUrl}}/6311459b2f99a21fe4f7913e
+Content-Type: application/json
+###
+
+# Obter pelo id do gênero
+GET {{apiUrl}}/6311459b2f99a21fe4f7913e
+Content-Type: application/json
+
+###
+# Obter gêneros filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+###

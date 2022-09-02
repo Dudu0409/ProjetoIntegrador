@@ -40,7 +40,7 @@ GET {{apiUrl}}/63080d1bb0b2d0e988a0bae4
 Content-Type: application/json
 
 ###
-# Obter usuário filtrando
+# Obter usuários filtrando
 GET {{apiUrl}}/filtro/185961
 Content-Type: application/json
 ###
