@@ -1,13 +1,16 @@
 @apiUrl = http://localhost:3000/api/tiposmidias
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFhN2YwNGIyY2FkNjIzODhkYTVlNmUiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjYyNjgyMTQ4LCJleHAiOjE2NjI2ODU3NDh9.trU-531aG0xDCgVxCHmo0_9gpcMZAB1kjVDbKV9zfO0
 
 # Listar Tipos de Mídias
 GET {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo Tipo de Mídia
 POST {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Filme"
@@ -17,6 +20,7 @@ Content-Type: application/json
 # Alterar Tipo de Mídia
 PUT {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "_id": "6311474c69d1c67ca24f2da2",
@@ -27,14 +31,17 @@ Content-Type: application/json
 # Excluir um Tipo de Mídia
 DELETE {{apiUrl}}/6311474c69d1c67ca24f2da2
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id do Tipo de Mídia
 GET {{apiUrl}}/6311476169d1c67ca24f2da8
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 ###
 # Obter Tipos de Mídias filtrando
 GET {{apiUrl}}/filtro/Editad
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

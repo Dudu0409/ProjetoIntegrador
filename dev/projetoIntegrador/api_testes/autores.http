@@ -1,13 +1,16 @@
 @apiUrl = http://localhost:3000/api/autores
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFhN2YwNGIyY2FkNjIzODhkYTVlNmUiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjYyNjgyMTQ4LCJleHAiOjE2NjI2ODU3NDh9.trU-531aG0xDCgVxCHmo0_9gpcMZAB1kjVDbKV9zfO0
 
 # Listar autores
 GET {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo autor
 POST {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Fulano", 
@@ -18,6 +21,7 @@ Content-Type: application/json
 # Alterar autor
 PUT {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "_id": "631143dedadef46c7db2a34f",
@@ -29,14 +33,17 @@ Content-Type: application/json
 # Excluir um autor
 DELETE {{apiUrl}}/63114d6755c23104eed04967
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id do autor
 GET {{apiUrl}}/631143dedadef46c7db2a34f
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 ###
 # Obter autores filtrando
 GET {{apiUrl}}/filtro/Editad
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

@@ -1,13 +1,16 @@
 @apiUrl = http://localhost:3000/api/produtosusuarios
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFhN2YwNGIyY2FkNjIzODhkYTVlNmUiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjYyNjgyMTQ4LCJleHAiOjE2NjI2ODU3NDh9.trU-531aG0xDCgVxCHmo0_9gpcMZAB1kjVDbKV9zfO0
 
 # Listar produtos de usuários
 GET {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo produtos de usuários
 POST {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "status": "Em Andamento", 
@@ -20,6 +23,7 @@ Content-Type: application/json
 # Alterar produtos de usuários
 PUT {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "_id": "631155047dc28eb285d86489",
@@ -33,14 +37,17 @@ Content-Type: application/json
 # Excluir produtos de usuários
 DELETE {{apiUrl}}/631155047dc28eb285d86489
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id de produtos de usuários
 GET {{apiUrl}}/631155047dc28eb285d86489
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 ###
 # Obter produtos de usuários filtrando
 GET {{apiUrl}}/filtro/Editad
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

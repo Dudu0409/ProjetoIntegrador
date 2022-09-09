@@ -1,13 +1,16 @@
 @apiUrl = http://localhost:3000/api/usuarios
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFhN2YwNGIyY2FkNjIzODhkYTVlNmUiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjYyNjgyMTQ4LCJleHAiOjE2NjI2ODU3NDh9.trU-531aG0xDCgVxCHmo0_9gpcMZAB1kjVDbKV9zfO0
 
 # Listar usuários
 GET {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo usuário
 POST {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Eduardo Bonamigo Bianchetti", 
@@ -20,12 +23,13 @@ Content-Type: application/json
 # Alterar usuário
 PUT {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
- "_id": "63080c22b0b2d0e988a0bad2",
+ "_id": "631a7f04b2cad62388da5e6e",
  "nome": "Eduardo Bonamigo Bianchetti", 
  "email": "185961@upf.br",
- "senha": "12345",
+ "senha": "123",
  "dataNascimento": "04/09/2001"
 }
 
@@ -33,20 +37,23 @@ Content-Type: application/json
 # Excluir um usuário
 DELETE {{apiUrl}}/630811b1ccc973e7cdd890e3
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id do usuário
 GET {{apiUrl}}/63080d1bb0b2d0e988a0bae4
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 ###
 # Obter usuários filtrando
 GET {{apiUrl}}/filtro/185961
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Autenticação de usuário
-POST {{apiUrl}}/login
+POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
