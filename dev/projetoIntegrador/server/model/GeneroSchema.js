@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-//const jwt = require("jsonwebtoken");
 const GeneroSchema = new mongoose.Schema({
   descricao: { type: String, required: true }
 });

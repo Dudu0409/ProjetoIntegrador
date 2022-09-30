@@ -28,7 +28,7 @@ routes.use(function (req, res, next) {
    } catch (error) {
         res.status(400).send("Erro no token de autenticação!");
     }
-    });
+});
 const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 const autorRout = require("./AutorRout");
