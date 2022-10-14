@@ -14,6 +14,7 @@ const TipoMidiaCon = lazy(() => import("./pages/tipoMidia/TipoMidiaCon"));
 const GeneroCon = lazy(() => import("./pages/genero/GeneroCon"));
 const AutorCon = lazy(() => import("./pages/autor/AutorCon"));
 const ProdutoCon = lazy(() => import("./pages/produto/ProdutoCon"));
+const ProdutoUsuarioCon = lazy(() => import("./pages/produtoUsuario/ProdutoUsuarioCon"));
 
 function App() {
   const [token, setToken] = useState([]);
@@ -30,10 +31,11 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/usuarios" element={<UsuarioCon />} />
-          <Route path="/tiposmidias" element={<TipoMidiaCon />} />
+          <Route path="/tiposMidias" element={<TipoMidiaCon />} />
           <Route path="/generos" element={<GeneroCon />} />
           <Route path="/autores" element={<AutorCon />} />
           <Route path="/produtos" element={<ProdutoCon />} />
+          <Route path="/produtosUsuarios" element={<ProdutoUsuarioCon />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
@@ -65,7 +67,7 @@ function Menu() {
           label: "Tipos de Mídia",
           icon: "pi pi-fw pi-user",
           command: () => {
-            navigate("/tiposmidias");
+            navigate("/tiposMidias");
           },
         },
         {
@@ -87,6 +89,13 @@ function Menu() {
           icon: "pi pi-fw pi-user",
           command: () => {
             navigate("/produtos");
+          },
+        },
+        {
+          label: "Produtos Usuários",
+          icon: "pi pi-fw pi-user",
+          command: () => {
+            navigate("/produtosUsuarios");
           },
         },
       ],
