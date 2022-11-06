@@ -37,7 +37,8 @@ const UsuarioForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Usuários</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="nome"
@@ -45,12 +46,12 @@ const UsuarioForm = (props) => {
                 {...register("nome", {
                   required: { value: true, message: "O nome é obrigatório!" },
                   maxLength: {
-                    value: 50,
-                    message: "O nome pode ter no máximo 50 caracteres!",
+                    value: 100,
+                    message: "O nome pode ter no máximo 100 caracteres!",
                   },
                   minLength: {
-                    value: 2,
-                    message: "O nome pode ter no mínimo 2 caracteres!",
+                    value: 1,
+                    message: "O nome pode ter no mínimo 1 caractere!",
                   },
                 })}
                 defaultValue={props.usuario.nome}
@@ -69,20 +70,23 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="email"
                 placeholder="E-mail..."
                 {...register("email", {
-                  required: { value: true, message: "O email é obrigatório!" },
+                  required: {
+                    value: true,
+                    message: "O email é obrigatório!",
+                  },
                   maxLength: {
                     value: 100,
                     message: "O email pode ter no máximo 100 caracteres!",
                   },
                   minLength: {
-                    value: 10,
-                    message: "O email deve ter no mínimo 10 caracteres!",
+                    value: 2,
+                    message: "O email deve ter no mínimo 2 caracteres!",
                   },
                 })}
                 defaultValue={props.usuario.email}
@@ -96,7 +100,7 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <Password
                 name="senha"
@@ -111,7 +115,7 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <Password
                 name="contraSenha"
@@ -123,16 +127,51 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="field col-12 md:col-4">
-            <Calendar
-              name="dataNascimento"
-              placeholder="Data de Nascimento..."
-              value={props.usuario.dataNascimento}
-              onChange={handleInputChange}
-              dateFormat="dd-mm-yy"
-              showIcon
-            />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <InputText
+                name="tipo"
+                placeholder="Tipo de Usuário..."
+                {...register("tipo", {
+                  required: { value: true, message: "O tipo é obrigatório!" },
+                  maxLength: {
+                    value: 50,
+                    message: "O tipo pode ter no máximo 50 caracteres!",
+                  },
+                  minLength: {
+                    value: 1,
+                    message: "O tipo pode ter no mínimo 1 caractere!",
+                  },
+                })}
+                defaultValue={props.usuario.tipo}
+                onChange={handleInputChange}
+              />
+              {errors.tipo && (
+                <span
+                  style={{
+                    color: "red",
+                    fontStyle: "italic",
+                  }}
+                >
+                  {errors.tipo.message}
+                </span>
+              )}
+            </div>
           </div>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <Calendar
+                name="dataNascimento"
+                placeholder="Data de Nascimento..."
+                value={props.usuario.dataNascimento}
+                onChange={handleInputChange}
+                dateFormat="dd/mm/yy"
+                showIcon
+              />
+            </div>
+          </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

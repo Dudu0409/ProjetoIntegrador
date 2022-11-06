@@ -1,5 +1,4 @@
 const TipoMidia = require("../model/TipoMidiaSchema");
-//const bcrypt = require("bcrypt");
 
 module.exports = {
   listar: async (req, res) => {

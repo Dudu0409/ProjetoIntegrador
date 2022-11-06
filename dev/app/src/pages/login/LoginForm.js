@@ -45,57 +45,83 @@ const LoginForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Toast ref={toastRef} />
       <div
-        className="div"
         style={{
-          width: "200px",
-          textAlign: "center",
-          marginLeft: "40%",
-          marginTop: "15%",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
-        <div className="p-fluid grid formgrid">
-          <div className="field col-12 md:col-12">
-            <InputText
-              placeholder="E-mail..."
-              type={"text"}
-              id="email"
-              className="p-inputtext-sm block mb-2"
-              {...register("email", {
-                required: { value: true, message: "E-mail é obrigatório!" },
-                minLength: { value: 2, message: "Tamanho mínimo é 2" },
-              })}
-              defaultValue={credenciais.email}
-              onKeyUp={handleInputChange}
-            />
-            {errors.email && (
-              <span style={{ color: "red" }}>{errors.email.message}</span>
-            )}
+        <div
+          className=""
+          style={{
+            width: "40%",
+            textAlign: "center",
+            marginTop: "5%",
+            marginRight: "5%",
+            marginLeft: "5%",
+            marginBottom: "5%",
+            paddingTop: "5%",
+            paddingInline: "5%",
+            paddingBottom: "5%",
+            borderStyle: "solid",
+            borderRadius: "35px",
+            borderColor: "gray",
+          }}
+        >
+          <h2 style={{ fontFamily: "sans-serif" }}>
+            Login
+          </h2>
+          <br />
+          <div className="p-fluid grid formgrid">
+            <div className="field col-12 md:col-6">
+              <InputText
+                placeholder="E-mail..."
+                type={"text"}
+                id="email"
+                className="p-inputtext-sm block mb-2"
+                {...register("email", {
+                  required: { value: true, message: "E-mail é obrigatório!" },
+                  minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                })}
+                defaultValue={credenciais.email}
+                onKeyUp={handleInputChange}
+              />
+              {errors.email && (
+                <span style={{ color: "red" }}>{errors.email.message}</span>
+              )}
+            </div>
+            <br />
+            <div className="field col-12 md:col-6">
+              <InputText
+                placeholder="Senha..."
+                type={"password"}
+                id="senha"
+                className="p-inputtext-sm block mb-2"
+                {...register("senha", {
+                  required: { value: true, message: "Senha é obrigatória!" },
+                  minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                })}
+                defaultValue={credenciais.senha}
+                onKeyUp={handleInputChange}
+              />
+              {errors.senha && (
+                <span style={{ color: "red" }}>{errors.senha.message}</span>
+              )}
+            </div>
           </div>
-          <div className="field col-12 md:col-12">
-            <InputText
-              placeholder="Senha..."
-              type={"password"}
-              id="senha"
-              className="p-inputtext-sm block mb-2"
-              {...register("senha", {
-                required: { value: true, message: "Senha é obrigatória" },
-                minLength: { value: 2, message: "Tamanho mínimo é 2" },
-              })}
-              defaultValue={credenciais.senha}
-              onKeyUp={handleInputChange}
-            />
-            {errors.senha && (
-              <span style={{ color: "red" }}>{errors.senha.message}</span>
-            )}
-          </div>
+          <br />
+          <Button
+            icon="pi pi-sign-in"
+            type="submit"
+            label="Acessar"
+            className="p-button-rounded p-button-primary"
+            style={{
+              width: "40%"
+            }}
+          />
         </div>
-        <br />
-        <Button
-          icon="pi pi-sign-in"
-          type="submit"
-          label="Login"
-          className="p-button-rounded p-button-info"
-        />
       </div>
     </form>
   );

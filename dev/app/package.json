@@ -7,10 +7,11 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "bootstrap": "^5.2.1",
+    "bootstrap": "^5.2.2",
     "primeicons": "^5.0.0",
     "primereact": "^8.5.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
     "react-jwt": "^1.1.6",
@@ -42,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
   }
 }

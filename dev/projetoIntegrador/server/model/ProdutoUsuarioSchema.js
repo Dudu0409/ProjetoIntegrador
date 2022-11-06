@@ -6,12 +6,12 @@ const ProdutoUsuarioSchema = new mongoose.Schema({
   produto: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Produto",
-    require: true,
+    required: true,
   },
   usuario: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario",
-    require: true,
+    required: true,
   }
 });
 module.exports = mongoose.model("ProdutoUsuario", ProdutoUsuarioSchema);

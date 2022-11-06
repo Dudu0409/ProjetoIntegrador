@@ -1,4 +1,5 @@
 const ProdutoUsuario = require("../model/ProdutoUsuarioSchema");
+
 module.exports = {
   listar: async (req, res) => {
     ProdutoUsuario.find((err, objetos) => {

@@ -26,7 +26,7 @@ function TipoMidiaCon() {
         setTiposMidias(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Tipos de Mídia Atualizados!",
+          summary: "Tipos de mídia atualizados!",
           life: 3000,
         });
       })

@@ -26,7 +26,7 @@ function AutorCon() {
         setAutores(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Autores Atualizados!",
+          summary: "Autores atualizados!",
           life: 3000,
         });
       })

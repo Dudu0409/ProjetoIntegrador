@@ -26,7 +26,8 @@ const AutorForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Autores</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="nome"
@@ -34,8 +35,8 @@ const AutorForm = (props) => {
                 {...register("nome", {
                   required: { value: true, message: "O nome é obrigatório!" },
                   maxLength: {
-                    value: 50,
-                    message: "O nome pode ter no máximo 50 caracteres!",
+                    value: 100,
+                    message: "O nome pode ter no máximo 100 caracteres!",
                   },
                   minLength: {
                     value: 2,
@@ -56,18 +57,21 @@ const AutorForm = (props) => {
                 </span>
               )}
             </div>
-          </div>    
+          </div>
           <br />
-          <div className="field col-12 md:col-4">
-            <Calendar
-              name="dataNascimento"
-              placeholder="Data de Nascimento..."
-              value={props.autor.dataNascimento}
-              onChange={handleInputChange}
-              dateFormat="dd-mm-yy"
-              showIcon
-            />
-          </div>   
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <Calendar
+                name="dataNascimento"
+                placeholder="Data de Nascimento..."
+                value={props.autor.dataNascimento}
+                onChange={handleInputChange}
+                dateFormat="dd-mm-yy"
+                showIcon
+              />
+            </div>
+          </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

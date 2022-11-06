@@ -1,0 +1,16 @@
+.margin {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.center {
+  text-align: center;
+}
+
+.error404div {
+  text-align: center;
+}
+.error404img {
+  width: 30%;
+  text-align: center;
+}

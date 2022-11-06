@@ -37,7 +37,7 @@ function ProdutoCon() {
         setProdutos(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Produtos Atualizados!",
+          summary: "Produtos atualizados!",
           life: 3000,
         });
       })

@@ -134,7 +134,8 @@ const ProdutoForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Produtos</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="titulo"
@@ -146,8 +147,8 @@ const ProdutoForm = (props) => {
                     message: "O título pode ter no máximo 100 caracteres!",
                   },
                   minLength: {
-                    value: 2,
-                    message: "O título deve ter no mínimo 2 caracteres!",
+                    value: 1,
+                    message: "O título deve ter no mínimo 1 caracteres!",
                   },
                 })}
                 defaultValue={props.produto.titulo}
@@ -161,7 +162,7 @@ const ProdutoForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="resumo"
@@ -191,18 +192,37 @@ const ProdutoForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="restricaoIdade"
                 placeholder="Restrição de Idade..."
+                {...register("restricaoIdade", {
+                  required: {
+                    value: true,
+                    message: "A restrição de idade é obrigatória!",
+                  },
+                  maxLength: {
+                    value: 3,
+                    message: "A restrição de idade pode ter no máximo 3 caracteres!",
+                  },
+                  minLength: {
+                    value: 1,
+                    message: "A restrição de idade deve ter no mínimo 1 caractere!",
+                  },
+                })}
                 defaultValue={props.produto.restricaoIdade}
                 onChange={handleInputChange}
               />
+              {errors.restricaoIdade && (
+                <span style={{ color: "red", fontStyle: "italic" }}>
+                  {errors.restricaoIdade.message}
+                </span>
+              )}
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <Calendar
                 name="dataLancamento"
@@ -215,18 +235,37 @@ const ProdutoForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="numeroCronologico"
                 placeholder="Número Cronológico..."
+                {...register("numeroCronologico", {
+                  required: {
+                    value: true,
+                    message: "O número cronológico é obrigatório!",
+                  },
+                  maxLength: {
+                    value: 3,
+                    message: "O número cronológico pode ter no máximo 3 caracteres!",
+                  },
+                  minLength: {
+                    value: 1,
+                    message: "O número cronológico deve ter no mínimo 1 caractere!",
+                  },
+                })}
                 defaultValue={props.produto.numeroCronologico}
                 onChange={handleInputChange}
               />
+              {errors.numeroCronologico && (
+                <span style={{ color: "red", fontStyle: "italic" }}>
+                  {errors.numeroCronologico.message}
+                </span>
+              )}
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div
               className="field col-4 md:col-4"
               style={{ textAlign: "center" }}
@@ -246,7 +285,7 @@ const ProdutoForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div
               className="field col-4 md:col-4"
               style={{ textAlign: "center" }}
@@ -266,7 +305,7 @@ const ProdutoForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div
               className="field col-4 md:col-4"
               style={{ textAlign: "center" }}
@@ -285,6 +324,7 @@ const ProdutoForm = (props) => {
               />
             </div>
           </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

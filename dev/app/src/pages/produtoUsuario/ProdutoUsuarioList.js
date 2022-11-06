@@ -3,13 +3,6 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 const ProdutoUsuarioList = (props) => {
-  const paginatorLeft = (
-    <Button type="button" icon="pi pi-refresh" className="p-button-text" />
-  );
-  const paginatorRight = (
-    <Button type="button" icon="pi pi-cloud" className="p-button-text" />
-  );
-
   return (
     <div className="App">
       <h4>Listagem de Produtos Usuários</h4>
@@ -38,17 +31,25 @@ const ProdutoUsuarioList = (props) => {
           currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords}"
           rows={5}
           rowsPerPageOptions={[5, 10, 20, 50]}
-          paginatorLeft={paginatorLeft}
-          paginatorRight={paginatorRight}
           selectionMode="single"
           selection={props.produtoUsuario}
           onSelectionChange={(e) => props.setProdutoUsuario(e.value)}
         >
           <Column field="status" header="Status" sortable filter></Column>
-          <Column  field="favorito" header="Favorito" dataType="boolean" ></Column>
+          <Column field="favorito" header="Favorito" dataType=""></Column>
           <Column field="nota" header="Nota" sortable></Column>
-          <Column field="produto.titulo" header="Produto" sortable filter></Column>
-          <Column field="usuario.nome" header="Usuário" sortable filter></Column>
+          <Column
+            field="produto.titulo"
+            header="Produto"
+            sortable
+            filter
+          ></Column>
+          <Column
+            field="usuario.nome"
+            header="Usuário"
+            sortable
+            filter
+          ></Column>
           <Column
             header="Operações"
             body={(row) => {

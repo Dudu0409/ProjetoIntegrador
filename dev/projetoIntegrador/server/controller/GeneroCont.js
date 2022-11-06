@@ -1,5 +1,4 @@
 const Genero = require("../model/GeneroSchema");
-//const bcrypt = require("bcrypt");
 
 module.exports = {
   listar: async (req, res) => {

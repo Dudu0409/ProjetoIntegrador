@@ -26,7 +26,7 @@ function GeneroCon() {
         setGeneros(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Gêneros Atualizados!",
+          summary: "Gêneros atualizados!",
           life: 3000,
         });
       })

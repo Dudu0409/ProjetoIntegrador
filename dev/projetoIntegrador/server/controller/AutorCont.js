@@ -1,5 +1,4 @@
 const Autor = require("../model/AutorSchema");
-//const bcrypt = require("bcrypt");
 
 module.exports = {
   listar: async (req, res) => {

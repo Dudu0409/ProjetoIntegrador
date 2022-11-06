@@ -7,6 +7,8 @@ import "primeicons/primeicons.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import LoginForm from "./pages/login/LoginForm";
+import "./css/visual.css";
+import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
@@ -36,6 +38,7 @@ function App() {
           <Route path="/autores" element={<AutorCon />} />
           <Route path="/produtos" element={<ProdutoCon />} />
           <Route path="/produtosUsuarios" element={<ProdutoUsuarioCon />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
@@ -65,35 +68,35 @@ function Menu() {
         },
         {
           label: "Tipos de Mídia",
-          icon: "pi pi-fw pi-user",
+          icon: "pi pi-fw pi-sliders-h",
           command: () => {
             navigate("/tiposMidias");
           },
         },
         {
           label: "Gêneros",
-          icon: "pi pi-fw pi-user",
+          icon: "pi pi-fw pi-bars",
           command: () => {
             navigate("/generos");
           },
         },
         {
           label: "Autores",
-          icon: "pi pi-fw pi-user",
+          icon: "pi pi-fw pi-bookmark",
           command: () => {
             navigate("/autores");
           },
         },
         {
           label: "Produtos",
-          icon: "pi pi-fw pi-user",
+          icon: "pi pi-fw pi-book",
           command: () => {
             navigate("/produtos");
           },
         },
         {
           label: "Produtos Usuários",
-          icon: "pi pi-fw pi-user",
+          icon: "pi pi-fw pi-users",
           command: () => {
             navigate("/produtosUsuarios");
           },

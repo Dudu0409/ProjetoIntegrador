@@ -25,7 +25,8 @@ const TipoMidiaForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Tipos de Mídia</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="nome"
@@ -33,8 +34,8 @@ const TipoMidiaForm = (props) => {
                 {...register("nome", {
                   required: { value: true, message: "O nome é obrigatório!" },
                   maxLength: {
-                    value: 50,
-                    message: "O nome pode ter no máximo 50 caracteres!",
+                    value: 100,
+                    message: "O nome pode ter no máximo 100 caracteres!",
                   },
                   minLength: {
                     value: 2,
@@ -56,6 +57,7 @@ const TipoMidiaForm = (props) => {
               )}
             </div>
           </div>       
+          <br/>
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

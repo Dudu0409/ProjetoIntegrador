@@ -11,7 +11,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function UsuarioCon() {
   const [usuarios, setUsuarios] = useState([]);
-  const initialState = { id: null, nome: "", email: "", senha: "", dataNascimento: "" };
+  const initialState = { id: null, nome: "", email: "", senha: "", dataNascimento: "", tipo: "" };
   const [usuario, setUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
@@ -26,7 +26,7 @@ function UsuarioCon() {
         setUsuarios(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Usuários Atualizados!",
+          summary: "Usuários atualizados!",
           life: 3000,
         });
       })

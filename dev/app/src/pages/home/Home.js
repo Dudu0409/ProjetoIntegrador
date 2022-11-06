@@ -1,9 +1,12 @@
 import React from "react";
+import "../../css/visual.css"
 
 function Home() {
   return (
-    <div>
-      <h1>Bem Vindo!</h1>
+    <div className="margin">
+      <h2>Bem Vindo ao Ayla!</h2>
+      <br/>
+      Aqui você poderá usar as funcionalidades de administrador no Projeto Ayla, desde cadastro de usuários até de produtos!
     </div>
   );
 }

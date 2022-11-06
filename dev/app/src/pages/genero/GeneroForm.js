@@ -25,13 +25,17 @@ const GeneroForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Gêneros</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="descricao"
                 placeholder="Descrição..."
                 {...register("descricao", {
-                  required: { value: true, message: "A descrição é obrigatória!" },
+                  required: {
+                    value: true,
+                    message: "A descrição é obrigatória!",
+                  },
                   maxLength: {
                     value: 50,
                     message: "A descrição pode ter no máximo 50 caracteres!",
@@ -44,18 +48,19 @@ const GeneroForm = (props) => {
                 defaultValue={props.genero.descricao}
                 onChange={handleInputChange}
               />
-              {errors.genero && (
+              {errors.descricao && (
                 <span
                   style={{
                     color: "red",
                     fontStyle: "italic",
                   }}
                 >
-                  {errors.genero.message}
+                  {errors.descricao.message}
                 </span>
               )}
             </div>
-          </div>       
+          </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"

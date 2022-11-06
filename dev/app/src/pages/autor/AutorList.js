@@ -3,12 +3,6 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 const AutorList = (props) => {
-  const paginatorLeft = (
-    <Button type="button" icon="pi pi-refresh" className="p-button-text" />
-  );
-  const paginatorRight = (
-    <Button type="button" icon="pi pi-cloud" className="p-button-text" />
-  );
   const dateBodyTemplate1 = (rowData) => {
     return new Intl.DateTimeFormat("pt-BR", {
       year: "numeric",
@@ -45,8 +39,6 @@ const AutorList = (props) => {
           currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords}"
           rows={5}
           rowsPerPageOptions={[5, 10, 20, 50]}
-          paginatorLeft={paginatorLeft}
-          paginatorRight={paginatorRight}
           selectionMode="single"
           selection={props.autor}
           onSelectionChange={(e) => props.setAutor(e.value)}
