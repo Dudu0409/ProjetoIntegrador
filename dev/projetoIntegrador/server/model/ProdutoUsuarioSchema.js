@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const ProdutoUsuarioSchema = new mongoose.Schema({
   status: { type: String, required: true },
-  favorito: { type: Boolean, default: false },
+  favorito: { type: String, default: "Não" },
   nota: { type: Number, required: true },
   produto: {
     type: mongoose.Schema.Types.ObjectId,

@@ -4,8 +4,10 @@ import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import { Password } from "primereact/password";
 import { Calendar } from "primereact/calendar";
+import { Dropdown } from "primereact/dropdown";
 
 const UsuarioForm = (props) => {
+  const usuarioOptions = ["Normal", "Admin"];
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setUsuario({ ...props.usuario, [name]: value });
@@ -129,33 +131,13 @@ const UsuarioForm = (props) => {
           <br />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
-              <InputText
-                name="tipo"
-                placeholder="Tipo de Usuário..."
-                {...register("tipo", {
-                  required: { value: true, message: "O tipo é obrigatório!" },
-                  maxLength: {
-                    value: 50,
-                    message: "O tipo pode ter no máximo 50 caracteres!",
-                  },
-                  minLength: {
-                    value: 1,
-                    message: "O tipo pode ter no mínimo 1 caractere!",
-                  },
-                })}
-                defaultValue={props.usuario.tipo}
-                onChange={handleInputChange}
-              />
-              {errors.tipo && (
-                <span
-                  style={{
-                    color: "red",
-                    fontStyle: "italic",
-                  }}
-                >
-                  {errors.tipo.message}
-                </span>
-              )}
+                <Dropdown
+                  name="tipo"
+                  placeholder="Tipo do Usuário..."
+                  value={props.usuario.tipo}
+                  options={usuarioOptions}
+                  onChange={handleInputChange}
+                />
             </div>
           </div>
           <br />

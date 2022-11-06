@@ -5,8 +5,10 @@ import { useForm } from "react-hook-form";
 import { AutoComplete } from "primereact/autocomplete";
 import ProdutoSrv from "../produto/ProdutoSrv";
 import UsuarioSrv from "../usuario/UsuarioSrv";
+import { Dropdown } from "primereact/dropdown";
 
 const ProdutoUsuarioForm = (props) => {
+  const favoritoOptions = ["Não", "Sim"];
   const [produtos, setProdutos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const handleInputChange = (event) => {
@@ -70,7 +72,9 @@ const ProdutoUsuarioForm = (props) => {
         _filteredUsuarios = [...usuarios];
       } else {
         _filteredUsuarios = usuarios.filter((usuario) => {
-          return usuario.nome.toLowerCase().startsWith(event.query.toLowerCase());
+          return usuario.nome
+            .toLowerCase()
+            .startsWith(event.query.toLowerCase());
         });
       }
 
@@ -98,7 +102,8 @@ const ProdutoUsuarioForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h5 style={{ textAlign: "center" }}>Cadastro de Produtos Usuários</h5>
-          <div className="p-fluid grid formgrid">
+          <p />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="status"
@@ -125,7 +130,19 @@ const ProdutoUsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <Dropdown
+                name="favorito"
+                placeholder="Favorito..."
+                value={props.produtoUsuario.favorito}
+                options={favoritoOptions}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
                 name="nota"
@@ -136,11 +153,8 @@ const ProdutoUsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div
-              className="field col-4 md:col-4"
-              style={{ textAlign: "center" }}
-            >
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
               <AutoComplete
                 name="produto"
                 value={props.produtoUsuario.produto}
@@ -156,11 +170,8 @@ const ProdutoUsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div
-              className="field col-4 md:col-4"
-              style={{ textAlign: "center" }}
-            >
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
               <AutoComplete
                 name="usuario"
                 value={props.produtoUsuario.usuario}
@@ -175,6 +186,7 @@ const ProdutoUsuarioForm = (props) => {
               />
             </div>
           </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"
