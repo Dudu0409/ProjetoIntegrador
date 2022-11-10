@@ -26,6 +26,7 @@ function App() {
   if (!token || token <= "") {
     return <LoginForm />;
   }
+
   return (
     <BrowserRouter>
       <Menu />
@@ -113,7 +114,7 @@ function Menu() {
     },
   ];
 
-  return <Menubar model={items} />;
+  return <Menubar model={items} className=""/>;
 }
 
 export default App;

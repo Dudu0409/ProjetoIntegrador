@@ -54,7 +54,7 @@ const LoginForm = (props) => {
         }}
       >
         <div
-          className=""
+          className="textWhite"
           style={{
             width: "40%",
             textAlign: "center",
@@ -70,7 +70,7 @@ const LoginForm = (props) => {
             borderColor: "gray",
           }}
         >
-          <h2 style={{ fontFamily: "sans-serif" }}>
+          <h2>
             Login
           </h2>
           <br />
@@ -80,7 +80,7 @@ const LoginForm = (props) => {
                 placeholder="E-mail..."
                 type={"text"}
                 id="email"
-                className="p-inputtext-sm block mb-2"
+                className="p-inputtext-sm block mb-2 inputDark"
                 {...register("email", {
                   required: { value: true, message: "E-mail é obrigatório!" },
                   minLength: { value: 2, message: "Tamanho mínimo é 2" },
@@ -98,7 +98,7 @@ const LoginForm = (props) => {
                 placeholder="Senha..."
                 type={"password"}
                 id="senha"
-                className="p-inputtext-sm block mb-2"
+                className="p-inputtext-sm block mb-2 inputDark"
                 {...register("senha", {
                   required: { value: true, message: "Senha é obrigatória!" },
                   minLength: { value: 2, message: "Tamanho mínimo é 2" },
@@ -116,9 +116,11 @@ const LoginForm = (props) => {
             icon="pi pi-sign-in"
             type="submit"
             label="Acessar"
-            className="p-button-rounded p-button-primary"
+            className="p-button-rounded"
             style={{
-              width: "40%"
+              width: "40%",
+              backgroundColor: "#7B73F1", 
+              borderColor: "#7B73F1"
             }}
           />
         </div>

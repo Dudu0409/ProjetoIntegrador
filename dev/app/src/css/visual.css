@@ -1,7 +1,24 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: white !important;
+}
 .margin {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
+}
+.textWhite {
+  color: white;
+}
+
+.inputDark{
+  color: white;
+  background-color: #303030;
 }
 .center {
   text-align: center;
@@ -13,4 +30,7 @@
 .error404img {
   width: 30%;
   text-align: center;
+}
+body {
+  background-color: #303030;
 }

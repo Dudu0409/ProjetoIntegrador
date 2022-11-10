@@ -2,7 +2,21 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
+
 const ProdutoList = (props) => {
+  const imagemTemplate = (rowData) => {
+    const imagem = rowData.imagem;
+    return (
+      <React.Fragment>
+        <img
+          alt="img"
+          src={imagem}
+          width={32}
+          style={{ verticalAlign: "middle" }}
+        />
+      </React.Fragment>
+    );
+  };
 
   const dateBodyTemplate = (rowData) => {
     return new Intl.DateTimeFormat("pt-BR", {
@@ -44,17 +58,25 @@ const ProdutoList = (props) => {
           selection={props.produto}
           onSelectionChange={(e) => props.setProduto(e.value)}
         >
+          <Column field="imagem" header="Capa" body={imagemTemplate}></Column>
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="resumo" header="Resumo" sortable></Column>
-          <Column field="restricaoIdade" header="Restrição de Idade" sortable></Column>
-          <Column field="numeroCronologico" header="Número Cronológico" sortable></Column>
+          <Column
+            field="restricaoIdade"
+            header="Restrição de Idade"
+            sortable
+          ></Column>
+          <Column
+            field="numeroCronologico"
+            header="Número Cronológico"
+            sortable
+          ></Column>
           <Column
             field="dataLancamento"
             header="Data de Lançamento"
             body={dateBodyTemplate}
             sortable
           ></Column>
-          <Column field="imagem" header="Imagem" sortable></Column>
           <Column
             field="tipoMidia.nome"
             header="Tipo de Mídia"
@@ -67,12 +89,7 @@ const ProdutoList = (props) => {
             sortable
             filter
           ></Column>
-          <Column
-            field="autor.nome"
-            header="Autor"
-            sortable
-            filter
-          ></Column>
+          <Column field="autor.nome" header="Autor" sortable filter></Column>
           <Column
             header="Operações"
             body={(row) => {

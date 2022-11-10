@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api/produtos
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY0NDk2MzYyLCJleHAiOjE2NjQ0OTk5NjJ9.PcOOt7GnfGpkwspc8cccGINQf30frk0xzzmtdUmOIuA
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4MDg1Mjg0LCJleHAiOjE2NjgwODg4ODR9.ow4Y4KcT2mh8cpS2SOkk1pXCMI7DHrJl_2U_Ik2XMWE
 # Listar produtos
 GET {{apiUrl}}
 Content-Type: application/json
@@ -12,7 +12,7 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Eu Sou a Lenda", 
+ "titulo": "Test", 
  "resumo": "Nada", 
  "restricaoIdade": 16, 
  "dataLancamento": "04/09/2009",
@@ -20,6 +20,7 @@ x-auth-token: {{authToken}}
  "tipoMidia": "6311476169d1c67ca24f2da8",
  "autor": "631143b2dadef46c7db2a348",
  "genero": "631145c02f99a21fe4f79143"
+ 
 }
 ###
 
@@ -42,7 +43,7 @@ x-auth-token: {{authToken}}
 
 ###
 # Excluir um produto
-DELETE {{apiUrl}}/6311523e23f1d6f5db9991e3
+DELETE {{apiUrl}}/636cdbc41269ee293a1e3907
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

@@ -129,6 +129,27 @@ const ProdutoForm = (props) => {
       </div>
     );
   };
+
+  const uploadImage = async (e) => {
+    const file = e.target.files[0];
+    const imagem = await convertBase64(file);
+    props.setProduto({ ...props.produto, imagem });
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
@@ -204,11 +225,13 @@ const ProdutoForm = (props) => {
                   },
                   maxLength: {
                     value: 3,
-                    message: "A restrição de idade pode ter no máximo 3 caracteres!",
+                    message:
+                      "A restrição de idade pode ter no máximo 3 caracteres!",
                   },
                   minLength: {
                     value: 1,
-                    message: "A restrição de idade deve ter no mínimo 1 caractere!",
+                    message:
+                      "A restrição de idade deve ter no mínimo 1 caractere!",
                   },
                 })}
                 defaultValue={props.produto.restricaoIdade}
@@ -229,7 +252,7 @@ const ProdutoForm = (props) => {
                 placeholder="Data de Lançamento..."
                 value={props.produto.dataLancamento}
                 onChange={handleInputChange}
-                dateFormat="dd-mm-yy"
+                dateFormat="dd/mm/yy"
                 showIcon
               />
             </div>
@@ -247,11 +270,13 @@ const ProdutoForm = (props) => {
                   },
                   maxLength: {
                     value: 3,
-                    message: "O número cronológico pode ter no máximo 3 caracteres!",
+                    message:
+                      "O número cronológico pode ter no máximo 3 caracteres!",
                   },
                   minLength: {
                     value: 1,
-                    message: "O número cronológico deve ter no mínimo 1 caractere!",
+                    message:
+                      "O número cronológico deve ter no mínimo 1 caractere!",
                   },
                 })}
                 defaultValue={props.produto.numeroCronologico}
@@ -322,6 +347,23 @@ const ProdutoForm = (props) => {
                 itemTemplate={itemTemplate1}
                 placeholder="Gênero..."
               />
+            </div>
+          </div>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div
+              className="field col-4 md:col-4"
+              style={{ textAlign: "center" }}
+            >
+              <input
+                type="file"
+                name="imagem"
+                id="imagem"
+                accept=".jpeg, .png, .jpg"
+                onChange={(e) => {
+                  uploadImage(e);
+                }}
+              ></input>
             </div>
           </div>
           <br />

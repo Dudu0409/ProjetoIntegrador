@@ -4,7 +4,7 @@ const ProdutoSchema = new mongoose.Schema({
   resumo: { type: String, required: true },
   restricaoIdade: { type: Number, required: true },
   dataLancamento: { type: Date, required: true },
-  imagem: { data: Buffer, contentType: String },
+  imagem: { type: String, required: false },
   numeroCronologico: { type: Number, required: true },
   tipoMidia: {
     type: mongoose.Schema.Types.ObjectId,

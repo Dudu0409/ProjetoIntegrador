@@ -66,7 +66,7 @@ const AutorForm = (props) => {
                 placeholder="Data de Nascimento..."
                 value={props.autor.dataNascimento}
                 onChange={handleInputChange}
-                dateFormat="dd-mm-yy"
+                dateFormat="dd/mm/yy"
                 showIcon
               />
             </div>
