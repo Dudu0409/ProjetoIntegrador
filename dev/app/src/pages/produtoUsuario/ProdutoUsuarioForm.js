@@ -101,7 +101,7 @@ const ProdutoUsuarioForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
-          <h5 style={{ textAlign: "center" }}>Cadastro de Produtos Usuários</h5>
+          <h5 className="textWhite" style={{ textAlign: "center" }}>Cadastro de Produtos Usuários</h5>
           <p />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
@@ -133,6 +133,7 @@ const ProdutoUsuarioForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <Dropdown
+              className="inputDark"
                 name="favorito"
                 placeholder="Favorito..."
                 value={props.produtoUsuario.favorito}
@@ -191,16 +192,24 @@ const ProdutoUsuarioForm = (props) => {
             <Button
               type="submit"
               icon="pi pi-save"
-              className="p-button-rounded p-button-info"
+              className="p-button-rounded"
               label="Salvar"
+              style={{
+                backgroundColor: "#7B73F1",
+                borderColor: "#7B73F1",
+              }}
             ></Button>
             <span> </span>
             <Button
               type="button"
               icon="pi pi-undo"
-              className="p-button-rounded p-button-info"
+              className="p-button-rounded"
               label="Cancelar"
               onClick={props.cancelar}
+              style={{
+                backgroundColor: "#7B73F1",
+                borderColor: "#7B73F1",
+              }}
             ></Button>
           </div>
         </div>

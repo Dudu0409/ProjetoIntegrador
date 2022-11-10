@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import LoginForm from "./pages/login/LoginForm";
 import "./css/visual.css";
+import "./css/menubar.css";
 import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
@@ -30,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <Menu />
-      <Suspense fallback={<div>Carregando...</div>}>
+      <Suspense fallback={<div className="textWhite">Carregando...</div>}>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/usuarios" element={<UsuarioCon />} />
@@ -114,7 +115,7 @@ function Menu() {
     },
   ];
 
-  return <Menubar model={items} className=""/>;
+  return <Menubar model={items} className="ui-menubar"/>;
 }
 
 export default App;

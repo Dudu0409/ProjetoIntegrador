@@ -4,6 +4,7 @@ import "../../css/visual.css";
 const Error404 = () => {
   return (
     <div className="error404div">
+      <br/><br/><br/>
       <img src={error404} alt="error404" className="error404img"/>
     </div>
     

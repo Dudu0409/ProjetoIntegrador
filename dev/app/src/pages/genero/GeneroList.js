@@ -2,24 +2,34 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
+import "../../css/visual.css";
+
 const GeneroList = (props) => {
 
   return (
     <div className="App">
-      <h4>Listagem de Gêneros</h4>
+      <h4 className="textWhite">Listagem de Gêneros</h4>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"
           icon="pi pi-refresh"
-          className="p-button-rounded p-button-info"
+          className="p-button-rounded"
           onClick={props.onClickAtualizar}
+          style={{
+            backgroundColor: "#7B73F1", 
+            borderColor: "#7B73F1"
+          }}
         ></Button>
         <span> </span>
         <Button
           type="button"
           icon="pi pi-plus-circle"
-          className="p-button-rounded p-button-info"
+          className="p-button-rounded"
           onClick={props.inserir}
+          style={{
+            backgroundColor: "#7B73F1", 
+            borderColor: "#7B73F1"
+          }}
         ></Button>
       </div>
 
@@ -45,15 +55,23 @@ const GeneroList = (props) => {
                   <Button
                     type="button"
                     icon="pi pi-pencil"
-                    className="p-button-rounded p-button-info"
+                    className="p-button-rounded"
                     onClick={() => props.editar(row._id)}
+                    style={{
+                      backgroundColor: "#7B73F1", 
+                      borderColor: "#7B73F1"
+                    }}
                   ></Button>
                   <span> </span>
                   <Button
                     type="button"
                     icon="pi pi-trash"
-                    className="p-button-rounded p-button-info"
+                    className="p-button-rounded"
                     onClick={() => props.excluir(row._id)}
+                    style={{
+                      backgroundColor: "#7B73F1", 
+                      borderColor: "#7B73F1"
+                    }}
                   ></Button>
                 </>
               );

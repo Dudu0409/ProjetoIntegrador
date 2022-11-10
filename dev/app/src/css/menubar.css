@@ -1,0 +1,84 @@
+.ui-menubar {
+  background-color: #212121;
+  border: #212121;
+}
+.ui-menubar .ui-menuitem-link {
+  color: #212121;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: white;
+}
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link:not(.p-disabled):hover {
+  background: #303030;
+  color: white;
+}
+.p-menubar .p-menubar-root-list {
+  background: #212121;
+}
+.p-menubar.p-menubar-mobile-active .p-menubar-root-list {
+  background: #212121;
+}
+.p-menubar .p-menuitem-link {
+  background: #212121;
+}
+
+.p-menubar .p-menuitem:hover {
+  background: #212121;
+}
+.p-menubar .p-menuitem-link:not(.p-disabled):hover {
+  background: #303030;
+}
+
+.p-menubar .p-submenu-list {
+  background: #212121;
+}
+
+.p-menubar .p-menuitem-link .p-menuitem-text {
+  color: white;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem.p-menuitem-active
+  > .p-menuitem-link,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem.p-menuitem-active
+  > .p-menuitem-link:not(.p-disabled):hover {
+  background: #303030;
+}
+.pi-bars:before {
+  color: white;
+}
+.pi-home:before {
+  color: white;
+}
+.pi-file:before {
+  color: white;
+}
+.pi-power-off:before {
+  color: white;
+}
+.pi-user:before {
+  color: white;
+}
+.pi-sliders-h:before {
+  color: white;
+}
+.pi-bookmark:before {
+  color: white;
+}
+.pi-book:before {
+  color: white;
+}
+.pi-users:before {
+  color: white;
+}
