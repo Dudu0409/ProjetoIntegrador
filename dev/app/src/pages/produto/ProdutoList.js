@@ -56,7 +56,7 @@ const ProdutoList = (props) => {
         ></Button>
       </div>
 
-      <div className="card">
+      <div className="card removeBorda">
         <DataTable
           value={props.produtos}
           paginator

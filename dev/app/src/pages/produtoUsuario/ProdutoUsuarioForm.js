@@ -9,6 +9,7 @@ import { Dropdown } from "primereact/dropdown";
 
 const ProdutoUsuarioForm = (props) => {
   const favoritoOptions = ["Não", "Sim"];
+  const statusOptions = ["Interesse", "Assistindo", "Concluído"];
   const [produtos, setProdutos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const handleInputChange = (event) => {
@@ -101,39 +102,27 @@ const ProdutoUsuarioForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
-          <h5 className="textWhite" style={{ textAlign: "center" }}>Cadastro de Produtos Usuários</h5>
+          <h5 className="textWhite" style={{ textAlign: "center" }}>
+            Cadastro de Produtos Usuários
+          </h5>
           <p />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
-              <InputText
+              <Dropdown
+                className="inputDark"
                 name="status"
                 placeholder="Status..."
-                {...register("status", {
-                  required: { value: true, message: "O status é obrigatório!" },
-                  maxLength: {
-                    value: 100,
-                    message: "O status pode ter no máximo 100 caracteres!",
-                  },
-                  minLength: {
-                    value: 2,
-                    message: "O status deve ter no mínimo 2 caracteres!",
-                  },
-                })}
-                defaultValue={props.produtoUsuario.status}
+                value={props.produtoUsuario.status}
+                options={statusOptions}
                 onChange={handleInputChange}
               />
-              {errors.status && (
-                <span style={{ color: "red", fontStyle: "italic" }}>
-                  {errors.status.message}
-                </span>
-              )}
             </div>
           </div>
           <br />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <Dropdown
-              className="inputDark"
+                className="inputDark"
                 name="favorito"
                 placeholder="Favorito..."
                 value={props.produtoUsuario.favorito}

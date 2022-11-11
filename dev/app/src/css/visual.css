@@ -93,6 +93,11 @@ input:-webkit-autofill {
   color: white;
 }
 
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
 /*Dialog*/
 .p-dialog-draggable .p-dialog-header {
   background: #303030 !important;

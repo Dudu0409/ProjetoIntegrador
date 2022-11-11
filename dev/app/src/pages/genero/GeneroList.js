@@ -33,7 +33,7 @@ const GeneroList = (props) => {
         ></Button>
       </div>
 
-      <div className="card">
+      <div className="card removeBorda">
         <DataTable
           value={props.generos}
           paginator

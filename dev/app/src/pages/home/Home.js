@@ -6,7 +6,7 @@ function Home() {
     <div className="margin textWhite">
       <h2>Bem Vindo ao Ayla!</h2>
       <br/>
-      Aqui você poderá usar as funcionalidades de administrador no Projeto Ayla, desde cadastro de usuários até de produtos!
+      Aqui você poderá usar as funcionalidades de administrador do Projeto Ayla, desde cadastro de usuários, autores, gêneros, tipos de mídias e produtos.
     </div>
   );
 }
