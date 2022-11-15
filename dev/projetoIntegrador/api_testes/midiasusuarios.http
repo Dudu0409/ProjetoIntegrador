@@ -1,0 +1,53 @@
+@apiUrl = http://localhost:3000/api/midiasusuarios
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTM1MDgwLCJleHAiOjE2Njg1Mzg2ODB9.ptp8ZH0AFKLo4waqa86CT7d4gRImNQdjk-XUGJGnTKg
+
+# Listar midias de usuários
+GET {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Inserir novas midias de usuários
+POST {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "status": "Em Andamento", 
+ "nota": 9.8, 
+ "midia": "6373d17b7a1389a91881b531",
+ "usuario": "63361c1d854dc8d57a46ac12"
+}
+###
+
+# Alterar midias de usuários
+PUT {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "6373d3c443d8b708e89b43e1",
+ "status": "Em Andamento Editado", 
+ "nota": 9.9, 
+ "midia": "6373d17b7a1389a91881b531",
+ "usuario": "63361c1d854dc8d57a46ac12"
+}
+
+###
+# Excluir midias de usuários
+DELETE {{apiUrl}}/6373d36343d8b708e89b43c9
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter pelo id de midias de usuários
+GET {{apiUrl}}/6373d3c443d8b708e89b43e1
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+###
+# Obter midias de usuários filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

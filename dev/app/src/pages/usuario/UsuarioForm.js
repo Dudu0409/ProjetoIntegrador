@@ -38,7 +38,9 @@ const UsuarioForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
-          <h5 className="textWhite" style={{ textAlign: "center" }}>Cadastro de Usuários</h5>
+          <h5 className="textWhite" style={{ textAlign: "center" }}>
+            Cadastro de Usuários
+          </h5>
           <p />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
@@ -131,14 +133,14 @@ const UsuarioForm = (props) => {
           <br />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
-                <Dropdown
+              <Dropdown
                 className="inputDark"
-                  name="tipo"
-                  placeholder="Tipo do Usuário..."
-                  value={props.usuario.tipo}
-                  options={usuarioOptions}
-                  onChange={handleInputChange}
-                />
+                name="tipo"
+                placeholder="Tipo do Usuário..."
+                value={props.usuario.tipo}
+                options={usuarioOptions}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
           <br />

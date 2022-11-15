@@ -1,0 +1,61 @@
+@apiUrl = http://localhost:3000/api/midias
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTM0NTc1LCJleHAiOjE2Njg1MzgxNzV9.8_upnj5OooD1LR2egsi2I5kB40udy4-eqyX9Fvf_5vE
+# Listar midias
+GET {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Inserir nova midia
+POST {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "titulo": "Filtrado", 
+ "resumo": "Nada", 
+ "restricaoIdade": 16, 
+ "dataLancamento": "04/09/2009",
+ "numeroCronologico": 1,
+ "tipoMidia": "6311476169d1c67ca24f2da8",
+ "autor": "631143b2dadef46c7db2a348",
+ "genero": "631145c02f99a21fe4f79143"
+ 
+}
+###
+
+# Alterar midia
+PUT {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "6373d17b7a1389a91881b531",
+ "titulo": "Eu Sou a Lenda Editado", 
+ "resumo": "Nada Editado", 
+ "restricaoIdade": 16, 
+ "dataLancamento": "04/09/2009",
+ "numeroCronologico": 1,
+ "tipoMidia": "6311476169d1c67ca24f2da8",
+ "autor": "6336219b73a573c4f57ecec6",
+ "genero": "631145c02f99a21fe4f79143"
+}
+
+###
+# Excluir uma midia
+DELETE {{apiUrl}}/6373d15e7a1389a91881b52b
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter pelo id da midia
+GET {{apiUrl}}/6373d17b7a1389a91881b531
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+###
+# Obter midias filtrando
+GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

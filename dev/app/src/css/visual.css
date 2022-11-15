@@ -1,23 +1,28 @@
 body {
   background-color: #303030;
 }
+
 a {
   text-decoration: none;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
 }
+
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
 }
+
 .margin {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .textWhite {
   color: white;
 }
@@ -26,6 +31,7 @@ input:-webkit-autofill {
   color: white;
   background-color: #303030;
 }
+
 .center {
   text-align: center;
 }
@@ -33,10 +39,12 @@ input:-webkit-autofill {
 .error404div {
   text-align: center;
 }
+
 .error404img {
   width: 30%;
   text-align: center;
 }
+
 .p-datatable .p-datatable-tbody > tr > td {
   background: #303030 !important;
   color: white !important;
@@ -138,21 +146,26 @@ input:-webkit-autofill {
 .p-fluid .p-calendar .p-inputtext {
   color: white !important;
 }
+
 .p-inputtext {
   color: white;
   background-color: #303030;
 }
+
 .p-button {
-  background: #7B73F1;
+  background: #7b73f1;
   border: white !important;
 }
+
 .p-button:enabled:hover {
-  background: #7B73F1;
-  border: 1px solid #7B73F1 !important;
+  background: #7b73f1;
+  border: 1px solid #7b73f1 !important;
 }
+
 .p-dropdown-panel .p-dropdown-items {
   background: #303030;
 }
+
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
   color: white;
 }
@@ -162,7 +175,9 @@ input:-webkit-autofill {
   background: #303030;
 }
 
-.p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+.p-dropdown-panel
+  .p-dropdown-items
+  .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
   color: white;
   background: #212121;
 }
@@ -180,20 +195,25 @@ input:-webkit-autofill {
   color: white;
   background-color: #212121;
 }
+
 .p-column-filter-menu-button {
   color: white;
 }
+
 .p-column-filter-overlay {
   color: white;
   background-color: #303030;
 }
+
 .p-column-filter-overlay-menu .p-column-filter-operator {
   color: white;
   background-color: #303030;
 }
+
 .p-dropdown .p-dropdown-label {
   background-color: #303030;
 }
+
 .p-dropdown .p-dropdown-trigger {
   color: white;
   background-color: #303030;
