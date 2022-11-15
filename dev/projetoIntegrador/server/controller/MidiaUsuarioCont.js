@@ -31,22 +31,35 @@ module.exports = {
     MidiaUsuario.findOne({ _id: req.params.id }, function (err, obj) {
       err ? res.status(400).send(err) : res.status(200).json(obj);
     })
-    .populate("midia")
-    .populate("usuario");
+      .populate("midia")
+      .populate("usuario");
   },
   filtrar: (req, res) => {
     MidiaUsuario.find(
       {
-        $or: [
-          { status: { $regex: req.params.filtro, $options: "i" } },
-        ],
+        $or: [{ status: { $regex: req.params.filtro, $options: "i" } }],
       },
       function (err, obj) {
         err ? res.status(400).send(err) : res.status(200).json(obj);
       }
     )
-    .populate("midia")
-    .populate("usuario")
-    .sort({ status: -1 });
+      .populate("midia")
+      .populate("usuario")
+      .sort({ status: -1 });
+  },
+  favoritar: async (req, res) => {
+    var midiaFavorita = await MidiaUsuario.findOne({ _id: req.params.id });
+    if (midiaFavorita.favorito === "Não") {
+      midiaFavorita.favorito = "Sim";
+    } else {
+      midiaFavorita.favorito = "Não";
+    }
+    MidiaUsuario.updateOne(
+      { _id: midiaFavorita._id },
+      midiaFavorita,
+      function (err) {
+        err ? res.status(400).send(err) : res.status(200).json("message:ok");
+      }
+    );
   },
 };

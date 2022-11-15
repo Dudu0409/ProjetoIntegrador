@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api/midiasusuarios
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTM1MDgwLCJleHAiOjE2Njg1Mzg2ODB9.ptp8ZH0AFKLo4waqa86CT7d4gRImNQdjk-XUGJGnTKg
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTQzNzcwLCJleHAiOjE2Njg1NDczNzB9.O27LH6I8xbwDbFkrPsAmu-fnftzSH9ivyFPxohhMIDA
 
 # Listar midias de usuários
 GET {{apiUrl}}
@@ -48,6 +48,13 @@ x-auth-token: {{authToken}}
 ###
 # Obter midias de usuários filtrando
 GET {{apiUrl}}/filtro/Editad
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+###
+# Favoritar midias de usuários
+GET {{apiUrl}}/favoritar/6373d39743d8b708e89b43d2
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
