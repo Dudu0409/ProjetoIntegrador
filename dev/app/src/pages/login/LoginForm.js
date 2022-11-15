@@ -65,9 +65,6 @@ const LoginForm = (props) => {
             paddingTop: "5%",
             paddingInline: "5%",
             paddingBottom: "5%",
-            borderStyle: "solid",
-            borderRadius: "35px",
-            borderColor: "gray",
           }}
         >
           <h2>

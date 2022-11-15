@@ -47,8 +47,8 @@ const ProdutoUsuarioList = (props) => {
           onSelectionChange={(e) => props.setProdutoUsuario(e.value)}
         >
           <Column field="status" header="Status" sortable filter></Column>
-          <Column field="favorito" header="Favorito" dataType=""></Column>
-          <Column field="nota" header="Nota" sortable></Column>
+          <Column field="favorito" header="Favorito" sortable filter></Column>
+          <Column field="nota" header="Nota" sortable filter></Column>
           <Column
             field="produto.titulo"
             header="Produto"

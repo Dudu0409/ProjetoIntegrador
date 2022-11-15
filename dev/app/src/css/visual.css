@@ -144,7 +144,7 @@ input:-webkit-autofill {
 }
 .p-button {
   background: #7B73F1;
-  border: 1px solid #7B73F1 !important;
+  border: white !important;
 }
 .p-button:enabled:hover {
   background: #7B73F1;
@@ -179,4 +179,22 @@ input:-webkit-autofill {
 .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
   color: white;
   background-color: #212121;
+}
+.p-column-filter-menu-button {
+  color: white;
+}
+.p-column-filter-overlay {
+  color: white;
+  background-color: #303030;
+}
+.p-column-filter-overlay-menu .p-column-filter-operator {
+  color: white;
+  background-color: #303030;
+}
+.p-dropdown .p-dropdown-label {
+  background-color: #303030;
+}
+.p-dropdown .p-dropdown-trigger {
+  color: white;
+  background-color: #303030;
 }

@@ -5,20 +5,26 @@ import { Button } from "primereact/button";
 import "../../css/visual.css";
 
 const ProdutoList = (props) => {
-  
   const imagemTemplate = (rowData) => {
     const imagem = rowData.imagem;
-    return (
-      <React.Fragment>
-        <img
-          alt="img"
-          src={imagem}
-          width={32}
-          style={{ verticalAlign: "middle" }}
-          
-        />
-      </React.Fragment>
-    );
+    if (imagem === null || imagem === "") {
+      return (
+        <React.Fragment>
+          <p>Sem Capa</p>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <img
+            alt="img"
+            src={imagem}
+            width={32}
+            style={{ verticalAlign: "middle" }}
+          />
+        </React.Fragment>
+      );
+    }
   };
 
   const dateBodyTemplate = (rowData) => {
@@ -39,8 +45,8 @@ const ProdutoList = (props) => {
           className="p-button-rounded"
           onClick={props.onClickAtualizar}
           style={{
-            backgroundColor: "#7B73F1", 
-            borderColor: "#7B73F1"
+            backgroundColor: "#7B73F1",
+            borderColor: "#7B73F1",
           }}
         ></Button>
         <span> </span>
@@ -50,8 +56,8 @@ const ProdutoList = (props) => {
           className="p-button-rounded"
           onClick={props.inserir}
           style={{
-            backgroundColor: "#7B73F1", 
-            borderColor: "#7B73F1"
+            backgroundColor: "#7B73F1",
+            borderColor: "#7B73F1",
           }}
         ></Button>
       </div>
@@ -71,16 +77,18 @@ const ProdutoList = (props) => {
         >
           <Column field="imagem" header="Capa" body={imagemTemplate}></Column>
           <Column field="titulo" header="Título" sortable filter></Column>
-          <Column field="resumo" header="Resumo" sortable></Column>
+          <Column field="resumo" header="Resumo" sortable filter></Column>
           <Column
             field="restricaoIdade"
             header="Restrição de Idade"
             sortable
+            filter
           ></Column>
           <Column
             field="numeroCronologico"
             header="Número Cronológico"
             sortable
+            filter
           ></Column>
           <Column
             field="dataLancamento"
@@ -112,8 +120,8 @@ const ProdutoList = (props) => {
                     className="p-button-rounded"
                     onClick={() => props.editar(row._id)}
                     style={{
-                      backgroundColor: "#7B73F1", 
-                      borderColor: "#7B73F1"
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
                     }}
                   ></Button>
                   <span> </span>
@@ -123,8 +131,8 @@ const ProdutoList = (props) => {
                     className="p-button-rounded"
                     onClick={() => props.excluir(row._id)}
                     style={{
-                      backgroundColor: "#7B73F1", 
-                      borderColor: "#7B73F1"
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
                     }}
                   ></Button>
                 </>
