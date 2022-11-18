@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api/usuarios
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTM1MDgwLCJleHAiOjE2Njg1Mzg2ODB9.ptp8ZH0AFKLo4waqa86CT7d4gRImNQdjk-XUGJGnTKg
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4ODA2MjE1LCJleHAiOjE2Njg4MDk4MTV9.5VeOSnxP8Z_7QjeFPINJ6ExYdM0b0_AXIgAp91KuRtw
 
 # Listar usuários
 GET {{apiUrl}}
@@ -35,7 +35,7 @@ x-auth-token: {{authToken}}
 
 ###
 # Excluir um usuário
-DELETE {{apiUrl}}/630811b1ccc973e7cdd890e3
+DELETE {{apiUrl}}/6377faf04cd45e00ad1bdef0
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
@@ -57,7 +57,30 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
+ "email": "admin@admin",
+ "senha": "123"
+}
+###
+
+# Autenticação de usuário ADMIN
+POST http://localhost:3000/api/loginAdmin
+Content-Type: application/json
+
+{
  "email": "185961@upf.br",
  "senha": "123"
+}
+###
+
+# Registrar sem token
+POST http://localhost:3000/api/register
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "nome": "Teste", 
+ "email": "teste@upf.br",
+ "senha": "123",
+ "dataNascimento": "04/09/2001"
 }
 ###

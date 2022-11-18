@@ -54,7 +54,21 @@ x-auth-token: {{authToken}}
 
 ###
 # Favoritar midias de usuários
-GET {{apiUrl}}/favoritar/6373d39743d8b708e89b43d2
+GET {{apiUrl}}/favoritar/6373d6e543d8b708e89b442f
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+###
+# Listar favoritos do usuário
+GET {{apiUrl}}/listfavoritos/63361c1d854dc8d57a46ac12
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+###
+# Nota média de uma mídia
+GET {{apiUrl}}/notamedia/6377eba67e849f60af6ad6c7
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

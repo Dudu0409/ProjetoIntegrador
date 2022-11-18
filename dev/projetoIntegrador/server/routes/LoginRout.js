@@ -4,4 +4,6 @@ const controle = require("../controller/LoginCont");
 
 routes.route("/login").post(controle.login);
 routes.route("/logout").post(controle.logout);
+routes.route("/loginAdmin").post(controle.loginAdmin);
+routes.route("/register").post(controle.register);
 module.exports = routes;
