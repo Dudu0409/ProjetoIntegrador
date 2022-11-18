@@ -218,3 +218,45 @@ input:-webkit-autofill {
   color: white;
   background-color: #303030;
 }
+
+.p-input-icon-right > i:last-of-type, .p-input-icon-right > svg:last-of-type, .p-input-icon-right > .p-input-suffix {
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) .p-yearpicker .p-yearpicker-year:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-password-panel {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-password-meter {
+  background: #212121 !important;
+}
+
+.p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}

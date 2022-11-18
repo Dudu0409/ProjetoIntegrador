@@ -1,0 +1,262 @@
+body {
+  background-color: #303030;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+.margin {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.textWhite {
+  color: white;
+}
+
+.inputDark {
+  color: white;
+  background-color: #303030;
+}
+
+.center {
+  text-align: center;
+}
+
+.error404div {
+  text-align: center;
+}
+
+.error404img {
+  width: 30%;
+  text-align: center;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  background: #303030 !important;
+  color: white !important;
+  border: 1px solid #303030 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #212121 !important;
+  color: white !important;
+  border: 1px solid #303030 !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #303030 !important;
+  color: white !important;
+  border: 1px solid #303030 !important;
+}
+
+.p-datatable .p-paginator {
+  background: #212121 !important;
+  color: white !important;
+  border: 1px solid #212121 !important;
+}
+
+.p-datatable .p-paginator .p-dropdown {
+  background: #212121 !important;
+  border: 1px solid #212121 !important;
+}
+
+.p-datatable .p-paginator .p-dropdown .p-dropdown-label {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-current {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-prev {
+  background: #303030 !important;
+  color: white !important;
+  border: 1px solid #303030 !important;
+}
+
+.p-datatable .p-paginator .p-button.p-button-icon-only {
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: white !important;
+}
+.p-dropdown-panel .p-dropdown-items {
+  background: #212121;
+  color: white;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
+/*Dialog*/
+.p-dialog-draggable .p-dialog-header {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-confirm-dialog .p-dialog-content {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-dialog .p-dialog-footer {
+  background: #303030 !important;
+  color: white !important;
+}
+
+/* Date */
+
+.p-datepicker:not(.p-datepicker-inline) {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  color: white !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  color: white !important;
+}
+
+.p-fluid .p-calendar .p-inputtext {
+  color: white !important;
+}
+
+.p-inputtext {
+  color: white;
+  background-color: #303030;
+}
+
+.p-button {
+  background: #7b73f1;
+  border: white !important;
+}
+
+.p-button:enabled:hover {
+  background: #7b73f1;
+  border: 1px solid #7b73f1 !important;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+  background: #303030;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  color: white;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: white;
+  background: #303030;
+}
+
+.p-dropdown-panel
+  .p-dropdown-items
+  .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  color: white;
+  background: #212121;
+}
+
+.p-autocomplete-panel {
+  color: white;
+  background-color: #303030;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  color: white;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
+  color: white;
+  background-color: #212121;
+}
+
+.p-column-filter-menu-button {
+  color: white;
+}
+
+.p-column-filter-overlay {
+  color: white;
+  background-color: #303030;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-operator {
+  color: white;
+  background-color: #303030;
+}
+
+.p-dropdown .p-dropdown-label {
+  background-color: #303030;
+}
+
+.p-dropdown .p-dropdown-trigger {
+  color: white;
+  background-color: #303030;
+}
+
+.p-input-icon-right > i:last-of-type, .p-input-icon-right > svg:last-of-type, .p-input-icon-right > .p-input-suffix {
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) .p-yearpicker .p-yearpicker-year:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
+  color: white;
+}
+
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}
+
+.p-password-panel {
+  background: #303030 !important;
+  color: white !important;
+}
+
+.p-password-meter {
+  background: #212121 !important;
+}
+
+.p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover, .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+  background: #212121;
+  color: white;
+}

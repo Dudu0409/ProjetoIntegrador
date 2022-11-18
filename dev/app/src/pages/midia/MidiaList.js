@@ -7,10 +7,10 @@ import "../../css/visual.css";
 const MidiaList = (props) => {
   const imagemTemplate = (rowData) => {
     const imagem = rowData.imagem;
-    if (imagem === null || imagem === "") {
+    if (!imagem || imagem === " ") {
       return (
         <React.Fragment>
-          <p>Sem Capa</p>
+          <div>Sem Capa</div>
         </React.Fragment>
       );
     } else {
