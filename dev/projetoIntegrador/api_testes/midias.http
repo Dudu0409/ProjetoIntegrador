@@ -59,3 +59,17 @@ GET {{apiUrl}}/filtro/Editad
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
+
+###
+# Obter midias de um tipo
+GET {{apiUrl}}/tipoMidia/631fd64630b4983d8c9fe103
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+###
+# Obter midias de um genero
+GET {{apiUrl}}/genero/631145c02f99a21fe4f79143
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

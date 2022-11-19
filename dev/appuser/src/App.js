@@ -12,6 +12,7 @@ import "./css/menubar.css";
 import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
+const Midia = lazy(() => import("./pages/midia/MidiaCon"));
 
 function App() {
   const [token, setToken] = useState([]);
@@ -28,6 +29,7 @@ function App() {
       <Suspense fallback={<div className="textWhite">Carregando...</div>}>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/midias" element={<Midia />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
