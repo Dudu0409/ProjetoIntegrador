@@ -13,11 +13,15 @@ import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Midia = lazy(() => import("./pages/midia/MidiaCon"));
+const MidiaUsuario = lazy(() => import("./pages/midiaUsuario/MidiaUsuarioCon"));
 
 function App() {
   const [token, setToken] = useState([]);
+  const [userId, setUserId] = useState([]);
+
   useEffect(() => {
     setToken(sessionStorage.getItem("token"));
+    setUserId(sessionStorage.getItem("userId"));
   }, []);
   if (!token || token <= "") {
     return <LoginForm />;
@@ -30,6 +34,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/midias" element={<Midia />} />
+          <Route path="/midiasUsuarioFavoritos" element={<MidiaUsuario />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
@@ -48,49 +53,19 @@ function Menu() {
       },
     },
     {
-      label: "Cadastros",
-      icon: "pi pi-fw pi-file",
+      label: "Mídias",
+      icon: "pi pi-fw pi-book",
       items: [
         {
-          label: "Usuários",
-          icon: "pi pi-fw pi-user",
-          command: () => {
-            navigate("/usuarios");
-          },
-        },
-        {
-          label: "Tipos de Mídia",
-          icon: "pi pi-fw pi-sliders-h",
-          command: () => {
-            navigate("/tiposMidias");
-          },
-        },
-        {
-          label: "Gêneros",
-          icon: "pi pi-fw pi-bars",
-          command: () => {
-            navigate("/generos");
-          },
-        },
-        {
-          label: "Autores",
-          icon: "pi pi-fw pi-bookmark",
-          command: () => {
-            navigate("/autores");
-          },
-        },
-        {
-          label: "Mídias",
-          icon: "pi pi-fw pi-book",
+          label: "Todas",
           command: () => {
             navigate("/midias");
           },
         },
         {
-          label: "Mídias Usuários",
-          icon: "pi pi-fw pi-users",
+          label: "Minhas",
           command: () => {
-            navigate("/midiasUsuarios");
+            navigate("/midiasUsuarioFavoritos");
           },
         },
       ],

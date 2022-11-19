@@ -5,6 +5,7 @@ import { Button } from "primereact/button";
 import "../../css/visual.css";
 
 const MidiaList = (props) => {
+
   const imagemTemplate = (rowData) => {
     const imagem = rowData.imagem;
     if (!imagem || imagem === " ") {
@@ -37,7 +38,7 @@ const MidiaList = (props) => {
 
   return (
     <div className="App">
-      <h4 className="textWhite">Listagem de Mídias</h4>
+      <h4 className="textWhite">Todas as Mídias</h4>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"

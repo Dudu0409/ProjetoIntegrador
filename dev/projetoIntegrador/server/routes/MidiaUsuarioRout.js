@@ -11,6 +11,6 @@ routes.route("/midiasusuarios/filtro/:filtro").get(controle.filtrar);
 routes.route("/midiasusuarios/favoritar/:id").get(controle.favoritar);
 routes.route("/midiasusuarios/listfavoritos/:id").get(controle.listarFavoritos);
 routes.route("/midiasusuarios/notamedia/:id").get(controle.notaMedia);
-
+routes.route("/midiasusuarios/listusuario/:id").get(controle.listarPorUsuario);
 
 module.exports = routes;

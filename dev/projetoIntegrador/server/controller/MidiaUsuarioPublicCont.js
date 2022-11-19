@@ -69,4 +69,12 @@ module.exports = {
       res.status(400).send(error);
     }
   },
+  listarPorUsuario: async (req, res) => {
+    MidiaUsuario.find({ usuario: req.params.id }, function (err, obj) {
+      err ? res.status(400).send(err) : res.status(200).json(obj);
+    })
+      .populate("midia")
+      .populate("usuario")
+      .sort({ status: 1 });
+  },
 };

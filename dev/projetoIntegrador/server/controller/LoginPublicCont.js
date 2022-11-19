@@ -2,6 +2,7 @@ const Usuario = require("../model/UsuarioSchema");
 const bcrypt = require("bcrypt");
 
 module.exports = {
+  //logar e retornar id do usuario
   login: async (req, res) => {
     Usuario.findOne({ email: req.body.email }, async function (err, obj) {
       if (err) return res.status(400).send(err);
@@ -10,7 +11,7 @@ module.exports = {
       const senhaValidada = await bcrypt.compare(req.body.senha, obj.senha);
       if (!senhaValidada) return res.status(400).send("Senha inválida!");
       const token = obj.generateAuthToken();
-      res.send(token);
+      res.send({token, userId: obj._id});
     });
   },
 

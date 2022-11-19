@@ -21,9 +21,11 @@ const LoginForm = (props) => {
   const onSubmit = (data) => {
     LoginSrv.login(credenciais)
       .then((response) => {
-        let token = response.data;
+        let token = response.data.token;
+        let userId = response.data.userId;
         if (token) {
-          sessionStorage.setItem("token", token);
+          sessionStorage.setItem("token", JSON.stringify(token));
+          sessionStorage.setItem("userId", JSON.stringify(userId));
           window.location = "/";
         } else {
           toastRef.current.show({

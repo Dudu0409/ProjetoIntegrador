@@ -6,7 +6,6 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
-import { ConfirmDialog } from "primereact/confirmdialog";
 
 function MidiaCon() {
   const [midias, setMidias] = useState([]);
@@ -38,7 +37,6 @@ function MidiaCon() {
 
     return (
       <div>
-        <ConfirmDialog />
         <MidiaList
           midias={midias}
           onClickAtualizar={onClickAtualizar}
