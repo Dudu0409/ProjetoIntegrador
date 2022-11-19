@@ -4,6 +4,7 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import LoginSrv from "./LoginSrv";
+import "../../css/login.css";
 
 const LoginForm = (props) => {
   const handleInputChange = (event) => {
@@ -42,87 +43,67 @@ const LoginForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Toast ref={toastRef} />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          className="textWhite"
-          style={{
-            width: "40%",
-            textAlign: "center",
-            marginTop: "5%",
-            marginRight: "5%",
-            marginLeft: "5%",
-            marginBottom: "5%",
-            paddingTop: "5%",
-            paddingInline: "5%",
-            paddingBottom: "5%",
-          }}
-        >
-          <h2>
-            Login
-          </h2>
-          <br />
-          <div className="p-fluid grid formgrid">
-            <div className="field col-12 md:col-6">
-              <InputText
-                placeholder="E-mail..."
-                type={"text"}
-                id="email"
-                className="p-inputtext-sm block mb-2 inputDark"
-                {...register("email", {
-                  required: { value: true, message: "E-mail é obrigatório!" },
-                  minLength: { value: 2, message: "Tamanho mínimo é 2" },
-                })}
-                defaultValue={credenciais.email}
-                onKeyUp={handleInputChange}
-              />
-              {errors.email && (
-                <span style={{ color: "red" }}>{errors.email.message}</span>
-              )}
-            </div>
-            <br />
-            <div className="field col-12 md:col-6">
-              <InputText
-                placeholder="Senha..."
-                type={"password"}
-                id="senha"
-                className="p-inputtext-sm block mb-2 inputDark"
-                {...register("senha", {
-                  required: { value: true, message: "Senha é obrigatória!" },
-                  minLength: { value: 2, message: "Tamanho mínimo é 2" },
-                })}
-                defaultValue={credenciais.senha}
-                onKeyUp={handleInputChange}
-              />
-              {errors.senha && (
-                <span style={{ color: "red" }}>{errors.senha.message}</span>
-              )}
-            </div>
+    <>
+      <div className="container">
+        <div className="container-login">
+          <div className="wrap-login">
+            <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+              <Toast ref={toastRef} />
+              <span className="login-form-title"> Bem vindo </span>
+              <div className="wrap-input">
+                <InputText
+                  placeholder="E-mail..."
+                  type={"text"}
+                  id="email"
+                  className="p-inputtext-sm block mb-2 inputDark input"
+                  {...register("email", {
+                    required: { value: true, message: "E-mail é obrigatório!" },
+                    minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                  })}
+                  defaultValue={credenciais.email}
+                  onKeyUp={handleInputChange}
+                />
+                {errors.email && (
+                  <span style={{ color: "red" }}>{errors.email.message}</span>
+                )}
+              </div>
+
+              <div className="wrap-input">
+                <InputText
+                  placeholder="Senha..."
+                  type={"password"}
+                  id="senha"
+                  className="p-inputtext-sm block mb-2 inputDark input"
+                  {...register("senha", {
+                    required: { value: true, message: "Senha é obrigatória!" },
+                    minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                  })}
+                  defaultValue={credenciais.senha}
+                  onKeyUp={handleInputChange}
+                />
+                {errors.senha && (
+                  <span style={{ color: "red" }}>{errors.senha.message}</span>
+                )}
+              </div>
+
+              <div className="container-login-form-btn">
+                <Button
+                  icon="pi pi-sign-in"
+                  type="submit"
+                  label="Login"
+                  className="p-button-rounded login-form-btn"
+                  style={{
+                    width: "40%",
+                    backgroundColor: "#7B73F1",
+                    borderColor: "#7B73F1",
+                  }}
+                />
+              </div>
+            </form>
           </div>
-          <br />
-          <Button
-            icon="pi pi-sign-in"
-            type="submit"
-            label="Acessar"
-            className="p-button-rounded"
-            style={{
-              width: "40%",
-              backgroundColor: "#7B73F1", 
-              borderColor: "#7B73F1"
-            }}
-          />
         </div>
       </div>
-    </form>
+    </>
   );
 };
 export default LoginForm;

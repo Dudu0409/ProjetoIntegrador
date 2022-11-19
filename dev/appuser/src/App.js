@@ -16,7 +16,7 @@ const Midia = lazy(() => import("./pages/midia/MidiaCon"));
 
 function App() {
   const [token, setToken] = useState([]);
-    useEffect(() => {
+  useEffect(() => {
     setToken(sessionStorage.getItem("token"));
   }, []);
   if (!token || token <= "") {
@@ -105,7 +105,7 @@ function Menu() {
     },
   ];
 
-  return <Menubar model={items} className="ui-menubar"/>;
+  return <Menubar model={items} className="ui-menubar" />;
 }
 
 export default App;
