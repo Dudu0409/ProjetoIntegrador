@@ -153,6 +153,7 @@ const UsuarioForm = (props) => {
                 onChange={handleInputChange}
                 dateFormat="dd/mm/yy"
                 showIcon
+                required
               />
             </div>
           </div>

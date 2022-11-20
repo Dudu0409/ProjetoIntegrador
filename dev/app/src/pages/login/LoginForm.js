@@ -49,7 +49,7 @@ const LoginForm = (props) => {
           <div className="wrap-login">
             <form onSubmit={handleSubmit(onSubmit)} className="login-form">
               <Toast ref={toastRef} />
-              <span className="login-form-title"> Bem vindo </span>
+              <span className="login-form-title"> Bem-vindo </span>
               <div className="wrap-input">
                 <InputText
                   placeholder="E-mail..."

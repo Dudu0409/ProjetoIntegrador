@@ -2,6 +2,14 @@ body {
   background-color: #303030;
 }
 
+.p-datatable {
+  margin: 0.5%
+}
+
+h4 {
+  margin-top: 0.5%;
+}
+
 a {
   text-decoration: none;
 }
@@ -46,9 +54,9 @@ input:-webkit-autofill {
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
-  background: #303030 !important;
+  background: #262626 !important;
   color: white !important;
-  border: 1px solid #303030 !important;
+  border: 1px solid #262626 !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {

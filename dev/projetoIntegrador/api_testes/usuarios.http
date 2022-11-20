@@ -79,7 +79,7 @@ x-auth-token: {{authToken}}
 
 {
  "nome": "Teste", 
- "email": "teste@upf.br",
+ "email": "teste123@upf.br",
  "senha": "123",
  "dataNascimento": "04/09/2001"
 }

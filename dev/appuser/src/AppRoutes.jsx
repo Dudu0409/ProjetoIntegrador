@@ -28,6 +28,7 @@ const MidiaUsuarioAssistindo = lazy(() =>
 const MidiaUsuarioConcluido = lazy(() =>
   import("./pages/midiaUsuarioConcluido/MidiaUsuarioConcluidoCon")
 );
+const Login = lazy(() => import("./pages/login/LoginCon"));
 
 const AppRoutes = () => {
   const Private = ({ children }) => {
@@ -48,7 +49,7 @@ const AppRoutes = () => {
         <Suspense fallback={<div className="textWhite">Carregando...</div>}>
           <Routes>
             <Route element={<WithoutNav />}>
-              <Route exact path="/login" element={<LoginPage />} />{" "}
+              <Route exact path="/login" element={<Login />} />
             </Route>
 
             <Route element={<WithNav />}>
@@ -80,22 +81,45 @@ const AppRoutes = () => {
                 }
               />
               <Route
-            path="/midiasUsuario/favoritos"
-            element={<Private><MidiaUsuarioFav /></Private>}
-          />
-          <Route
-            path="/midiasUsuario/interesses"
-            element={<Private><MidiaUsuarioInteresse /></Private>}
-          />
-          <Route
-            path="/midiasUsuario/assistindo"
-            element={<Private><MidiaUsuarioAssistindo /></Private>}
-          />
-          <Route
-            path="/midiasUsuario/concluidas"
-            element={<Private><MidiaUsuarioConcluido /></Private>}
-          />
-          <Route path="*" element={<Private><Error404 /></Private>} />
+                path="/midiasUsuario/favoritos"
+                element={
+                  <Private>
+                    <MidiaUsuarioFav />
+                  </Private>
+                }
+              />
+              <Route
+                path="/midiasUsuario/interesses"
+                element={
+                  <Private>
+                    <MidiaUsuarioInteresse />
+                  </Private>
+                }
+              />
+              <Route
+                path="/midiasUsuario/assistindo"
+                element={
+                  <Private>
+                    <MidiaUsuarioAssistindo />
+                  </Private>
+                }
+              />
+              <Route
+                path="/midiasUsuario/concluidas"
+                element={
+                  <Private>
+                    <MidiaUsuarioConcluido />
+                  </Private>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <Private>
+                    <Error404 />
+                  </Private>
+                }
+              />
             </Route>
           </Routes>
         </Suspense>

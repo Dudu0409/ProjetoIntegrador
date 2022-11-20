@@ -78,6 +78,7 @@ const MidiaUsuarioForm = (props) => {
                 value={props.midiaUsuario.status}
                 options={statusOptions}
                 onChange={handleInputChange}
+                required
               />
             </div>
           </div>
@@ -91,6 +92,7 @@ const MidiaUsuarioForm = (props) => {
                 value={props.midiaUsuario.favorito}
                 options={favoritoOptions}
                 onChange={handleInputChange}
+                required
               />
             </div>
           </div>
@@ -102,6 +104,7 @@ const MidiaUsuarioForm = (props) => {
                 placeholder="Nota..."
                 defaultValue={props.midiaUsuario.nota}
                 onChange={handleInputChange}
+                required
               />
             </div>
           </div>
@@ -119,6 +122,7 @@ const MidiaUsuarioForm = (props) => {
                 forceSelection
                 itemTemplate={itemTemplate1}
                 placeholder="Mídia..."
+                required
               />
             </div>
           </div>

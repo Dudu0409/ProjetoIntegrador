@@ -254,6 +254,7 @@ const MidiaForm = (props) => {
                 onChange={handleInputChange}
                 dateFormat="dd/mm/yy"
                 showIcon
+                required
               />
             </div>
           </div>
@@ -306,6 +307,7 @@ const MidiaForm = (props) => {
                 forceSelection
                 itemTemplate={itemTemplate2}
                 placeholder="Tipo de Mídia..."
+                required
               />
             </div>
           </div>
@@ -326,6 +328,7 @@ const MidiaForm = (props) => {
                 forceSelection
                 itemTemplate={itemTemplate3}
                 placeholder="Autor..."
+                required
               />
             </div>
           </div>
@@ -346,6 +349,7 @@ const MidiaForm = (props) => {
                 forceSelection
                 itemTemplate={itemTemplate1}
                 placeholder="Gênero..."
+                required
               />
             </div>
           </div>

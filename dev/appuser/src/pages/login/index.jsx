@@ -5,10 +5,9 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import "../../css/login.css";
-import { Link } from "react-router-dom";
 
 const LoginPage = (props) => {
-  const { login} = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -23,7 +22,7 @@ const LoginPage = (props) => {
   const [credenciais, setCredenciais] = useState({ email: "", senha: "" });
   const onSubmit = (data) => {
     console.log(credenciais);
-    login(credenciais)
+    login(credenciais);
   };
 
   return (
@@ -33,7 +32,7 @@ const LoginPage = (props) => {
           <div className="wrap-login">
             <form onSubmit={handleSubmit(onSubmit)} className="login-form">
               <Toast ref={toastRef} />
-              <span className="login-form-title"> Bem vindo </span>
+              <span className="login-form-title"> Bem-vindo </span>
               <div className="wrap-input">
                 <InputText
                   placeholder="E-mail..."
@@ -84,6 +83,14 @@ const LoginPage = (props) => {
                 />
               </div>
             </form>
+            <div className="text-center">
+              <span className="txt1">Não possui conta?</span>
+                <Button
+                  label="Criar conta"
+                  onClick={props.inserir}
+                  className="p-button-text txt2"
+                />
+            </div>
           </div>
         </div>
       </div>

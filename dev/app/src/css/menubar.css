@@ -157,6 +157,7 @@
 
 .removeBorda {
   --bs-card-bg: #303030;
+  border: none;
 }
 
 .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
