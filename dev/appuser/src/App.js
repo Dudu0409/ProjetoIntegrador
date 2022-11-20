@@ -6,10 +6,10 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
-import LoginForm from "./pages/login/LoginForm";
 import "./css/visual.css";
 import "./css/menubar.css";
 import Error404 from "./pages/error/404";
+import LoginForm from "./pages/login/LoginForm";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const MidiaAll = lazy(() => import("./pages/midiaAll/MidiaAllCon"));

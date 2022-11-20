@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { Link } from "react-router-dom";
 import LoginSrv from "./LoginSrv";
 import "../../css/login.css";
 
@@ -102,6 +103,12 @@ const LoginForm = (props) => {
                 />
               </div>
             </form>
+            <div className="text-center">
+              <span className="txt1">Não possui conta?</span>
+              {/* <Link to="/register" className="txt2 hov1">
+                <Button label="Criar conta" className="p-button-text txt2" />
+              </Link> */}
+            </div>
           </div>
         </div>
       </div>

@@ -89,6 +89,23 @@ function MidiaCon() {
       accept: () => excluirConfirm(_id),
     });
   };
+  const getNotaMedia = (_id) => {
+    MidiaUsuarioSrv.notaMedia(_id)
+      .then((response) => {
+        toastRef.current.show({
+          severity: "success",
+          summary: `A nota média é: ${response.data}`,
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
+  };
 
   const excluirConfirm = (_id) => {
     MidiaSrv.excluir(_id)
@@ -118,6 +135,7 @@ function MidiaCon() {
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           excluir={excluir}
+          getNotaMedia={getNotaMedia}
         />
         <Toast ref={toastRef} />
       </div>

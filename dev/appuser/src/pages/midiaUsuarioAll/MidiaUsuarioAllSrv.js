@@ -36,5 +36,13 @@ class MidiaUsuarioSrv {
       throw err;
     });
   }
+  async notaMedia(id) {
+    let nota = await axios.get(`${this.url}/notamedia/${id}`).catch((err) => {
+      throw err;
+    });
+    JSON.stringify(nota.data.toFixed(2));
+    console.log(nota.data);
+    return nota;
+  }
 }
 export default new MidiaUsuarioSrv();

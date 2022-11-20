@@ -111,6 +111,25 @@ const MidiaList = (props) => {
             filter
           ></Column>
           <Column field="autor.nome" header="Autor" sortable filter></Column>
+          <Column
+            header="Operações"
+            body={(row) => {
+              return (
+                <>
+                  <Button
+                    type="button"
+                    icon="pi pi-search"
+                    className="p-button-rounded"
+                    onClick={() => props.getNotaMedia(row._id)}
+                    style={{
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
+                    }}
+                  ></Button>
+                </>
+              );
+            }}
+          ></Column>
         </DataTable>
       </div>
     </div>
