@@ -12,8 +12,9 @@ import "./css/menubar.css";
 import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
-const Midia = lazy(() => import("./pages/midia/MidiaCon"));
-const MidiaUsuario = lazy(() => import("./pages/midiaUsuario/MidiaUsuarioCon"));
+const MidiaAll = lazy(() => import("./pages/midiaAll/MidiaAllCon"));
+const MidiaUsuarioAll = lazy(() => import("./pages/midiaUsuarioAll/MidiaUsuarioAllCon"));
+const MidiaUsuarioFav = lazy(() => import("./pages/midiaUsuarioFav/MidiaUsuarioFavCon"));
 
 function App() {
   const [token, setToken] = useState([]);
@@ -33,8 +34,9 @@ function App() {
       <Suspense fallback={<div className="textWhite">Carregando...</div>}>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/midias" element={<Midia />} />
-          <Route path="/midiasUsuarioFavoritos" element={<MidiaUsuario />} />
+          <Route path="/midias/all" element={<MidiaAll />} />
+          <Route path="/midiasUsuario/all" element={<MidiaUsuarioAll />} />
+          <Route path="/midiasUsuario/favoritos" element={<MidiaUsuarioFav />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
@@ -59,13 +61,19 @@ function Menu() {
         {
           label: "Todas",
           command: () => {
-            navigate("/midias");
+            navigate("/midias/all");
           },
         },
         {
-          label: "Minhas",
+          label: "Todas Minhas",
           command: () => {
-            navigate("/midiasUsuarioFavoritos");
+            navigate("/midiasUsuario/all");
+          },
+        },
+        {
+          label: "Minhas Favoritas",
+          command: () => {
+            navigate("/midiasUsuario/favoritos");
           },
         },
       ],
