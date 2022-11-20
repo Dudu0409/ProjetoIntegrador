@@ -81,6 +81,7 @@ module.exports = {
         soma = soma + midia[i].nota;
       }
       media = soma / midia.length;
+      media = parseFloat(media.toFixed(2));
       res.status(200).json(media);
     } catch (error) {
       res.status(400).send(error);
@@ -95,9 +96,12 @@ module.exports = {
       .sort({ status: 1 });
   },
   listarPorStatus: async (req, res) => {
-    MidiaUsuario.find({ usuario: req.params.id, status: req.params.status }, function (err, obj) {
-      err ? res.status(400).send(err) : res.status(200).json(obj);
-    })
+    MidiaUsuario.find(
+      { usuario: req.params.id, status: req.params.status },
+      function (err, obj) {
+        err ? res.status(400).send(err) : res.status(200).json(obj);
+      }
+    )
       .populate("midia")
       .populate("usuario")
       .sort({ status: 1 });
