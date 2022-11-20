@@ -94,4 +94,12 @@ module.exports = {
       .populate("usuario")
       .sort({ status: 1 });
   },
+  listarPorStatus: async (req, res) => {
+    MidiaUsuario.find({ usuario: req.params.id, status: req.params.status }, function (err, obj) {
+      err ? res.status(400).send(err) : res.status(200).json(obj);
+    })
+      .populate("midia")
+      .populate("usuario")
+      .sort({ status: 1 });
+  },
 };

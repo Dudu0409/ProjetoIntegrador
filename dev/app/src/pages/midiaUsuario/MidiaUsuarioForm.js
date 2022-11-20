@@ -9,7 +9,7 @@ import { Dropdown } from "primereact/dropdown";
 
 const MidiaUsuarioForm = (props) => {
   const favoritoOptions = ["Não", "Sim"];
-  const statusOptions = ["Interesse", "Em andamento", "Concluído"];
+  const statusOptions = ["Interesse", "Assistindo", "Concluído"];
   const [midias, setMidias] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const handleInputChange = (event) => {

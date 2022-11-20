@@ -32,7 +32,7 @@ function MidiaUsuarioCon() {
         setMidiasUsuarios(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Minhas mídias atualizadas!",
+          summary: "Meus favoritos atualizados!",
           life: 3000,
         });
       })

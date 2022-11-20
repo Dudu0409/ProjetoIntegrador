@@ -5,7 +5,6 @@ import { Button } from "primereact/button";
 import "../../css/visual.css";
 
 const MidiaUsuarioList = (props) => {
-  
   return (
     <div className="App">
       <h4 className="textWhite">Listagem de Mídias de Usuários</h4>
@@ -16,8 +15,8 @@ const MidiaUsuarioList = (props) => {
           className="p-button-rounded"
           onClick={props.onClickAtualizar}
           style={{
-            backgroundColor: "#7B73F1", 
-            borderColor: "#7B73F1"
+            backgroundColor: "#7B73F1",
+            borderColor: "#7B73F1",
           }}
         ></Button>
         <span> </span>
@@ -27,8 +26,8 @@ const MidiaUsuarioList = (props) => {
           className="p-button-rounded"
           onClick={props.inserir}
           style={{
-            backgroundColor: "#7B73F1", 
-            borderColor: "#7B73F1"
+            backgroundColor: "#7B73F1",
+            borderColor: "#7B73F1",
           }}
         ></Button>
       </div>
@@ -46,15 +45,10 @@ const MidiaUsuarioList = (props) => {
           selection={props.midiaUsuario}
           onSelectionChange={(e) => props.setMidiaUsuario(e.value)}
         >
+          <Column field="midia.titulo" header="Mídia" sortable filter></Column>
           <Column field="status" header="Status" sortable filter></Column>
           <Column field="favorito" header="Favorito" sortable filter></Column>
           <Column field="nota" header="Nota" sortable filter></Column>
-          <Column
-            field="midia.titulo"
-            header="Mídia"
-            sortable
-            filter
-          ></Column>
           <Column
             field="usuario.nome"
             header="Usuário"
@@ -72,8 +66,8 @@ const MidiaUsuarioList = (props) => {
                     className="p-button-rounded"
                     onClick={() => props.editar(row._id)}
                     style={{
-                      backgroundColor: "#7B73F1", 
-                      borderColor: "#7B73F1"
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
                     }}
                   ></Button>
                   <span> </span>
@@ -83,8 +77,8 @@ const MidiaUsuarioList = (props) => {
                     className="p-button-rounded"
                     onClick={() => props.excluir(row._id)}
                     style={{
-                      backgroundColor: "#7B73F1", 
-                      borderColor: "#7B73F1"
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
                     }}
                   ></Button>
                 </>

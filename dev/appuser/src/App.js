@@ -13,8 +13,21 @@ import Error404 from "./pages/error/404";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const MidiaAll = lazy(() => import("./pages/midiaAll/MidiaAllCon"));
-const MidiaUsuarioAll = lazy(() => import("./pages/midiaUsuarioAll/MidiaUsuarioAllCon"));
-const MidiaUsuarioFav = lazy(() => import("./pages/midiaUsuarioFav/MidiaUsuarioFavCon"));
+const MidiaUsuarioAll = lazy(() =>
+  import("./pages/midiaUsuarioAll/MidiaUsuarioAllCon")
+);
+const MidiaUsuarioFav = lazy(() =>
+  import("./pages/midiaUsuarioFav/MidiaUsuarioFavCon")
+);
+const MidiaUsuarioInteresse = lazy(() =>
+  import("./pages/midiaUsuarioInteresse/MidiaUsuarioInteresseCon")
+);
+const MidiaUsuarioAssistindo = lazy(() =>
+  import("./pages/midiaUsuarioAssistindo/MidiaUsuarioAssistindoCon")
+);
+const MidiaUsuarioConcluido = lazy(() =>
+  import("./pages/midiaUsuarioConcluido/MidiaUsuarioConcluidoCon")
+);
 
 function App() {
   const [token, setToken] = useState([]);
@@ -36,7 +49,22 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/midias/all" element={<MidiaAll />} />
           <Route path="/midiasUsuario/all" element={<MidiaUsuarioAll />} />
-          <Route path="/midiasUsuario/favoritos" element={<MidiaUsuarioFav />} />
+          <Route
+            path="/midiasUsuario/favoritos"
+            element={<MidiaUsuarioFav />}
+          />
+          <Route
+            path="/midiasUsuario/interesses"
+            element={<MidiaUsuarioInteresse />}
+          />
+          <Route
+            path="/midiasUsuario/assistindo"
+            element={<MidiaUsuarioAssistindo />}
+          />
+          <Route
+            path="/midiasUsuario/concluidas"
+            element={<MidiaUsuarioConcluido />}
+          />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
@@ -71,9 +99,27 @@ function Menu() {
           },
         },
         {
-          label: "Minhas Favoritas",
+          label: "Favoritos",
           command: () => {
             navigate("/midiasUsuario/favoritos");
+          },
+        },
+        {
+          label: "Interesses",
+          command: () => {
+            navigate("/midiasUsuario/interesses");
+          },
+        },
+        {
+          label: "Assistindo",
+          command: () => {
+            navigate("/midiasUsuario/assistindo");
+          },
+        },
+        {
+          label: "Concluídas",
+          command: () => {
+            navigate("/midiasUsuario/concluidas");
           },
         },
       ],
