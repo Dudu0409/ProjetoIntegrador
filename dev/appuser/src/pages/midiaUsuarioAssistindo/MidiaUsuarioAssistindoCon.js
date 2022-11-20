@@ -16,7 +16,7 @@ function MidiaUsuarioCon() {
     status: "",
     nota: "",
     midia: "",
-    usuario: JSON.parse(sessionStorage.getItem("userId")),
+    usuario: JSON.parse(localStorage.getItem("userId")),
   };
   const [midiaUsuario, setMidiaUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);
@@ -27,7 +27,7 @@ function MidiaUsuarioCon() {
   }, []);
 
   const onClickAtualizar = () => {
-    MidiaUsuarioSrv.listarStatus(JSON.parse(sessionStorage.getItem("userId")))
+    MidiaUsuarioSrv.listarStatus(JSON.parse(localStorage.getItem("userId")))
       .then((response) => {
         setMidiasUsuarios(response.data);
         toastRef.current.show({

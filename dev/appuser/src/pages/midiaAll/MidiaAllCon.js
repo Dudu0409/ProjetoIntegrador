@@ -17,7 +17,7 @@ function MidiaCon() {
     status: "",
     nota: "",
     midia: "",
-    usuario: JSON.parse(sessionStorage.getItem("userId")),
+    usuario: JSON.parse(localStorage.getItem("userId")),
   };
   const [midiaUsuario, setMidiaUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);
