@@ -19,7 +19,7 @@ function Home() {
         <Button
           type="button"
           className="p-button-rounded p-button-help"
-          label="Ir para App do Usuário"
+          label="Ir para App do usuário padrão"
           style={{ backgroundColor: "#7B73F1", borderColor: "#7B73F1" }}
         ></Button>
       </a>

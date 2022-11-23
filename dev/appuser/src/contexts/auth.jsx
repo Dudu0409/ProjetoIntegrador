@@ -21,8 +21,10 @@ export const AuthProvider = ({ children }) => {
     LoginSrv.login(credenciais).then((response) => {
       let token = response.data.token;
       let userId = response.data.userId;
+      let userNome = response.data.userNome;
       localStorage.setItem("token", JSON.stringify(token));
       localStorage.setItem("userId", JSON.stringify(userId));
+      localStorage.setItem("userNome", JSON.stringify(userNome));
       navigate("/");
       const loggedUser = response.data;
       localStorage.setItem("user", JSON.stringify(loggedUser));
@@ -36,6 +38,8 @@ export const AuthProvider = ({ children }) => {
     console.log("logout");
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userNome");
     setUser(null);
     navigate("/login");
   };

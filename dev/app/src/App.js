@@ -17,11 +17,13 @@ const TipoMidiaCon = lazy(() => import("./pages/tipoMidia/TipoMidiaCon"));
 const GeneroCon = lazy(() => import("./pages/genero/GeneroCon"));
 const AutorCon = lazy(() => import("./pages/autor/AutorCon"));
 const MidiaCon = lazy(() => import("./pages/midia/MidiaCon"));
-const MidiaUsuarioCon = lazy(() => import("./pages/midiaUsuario/MidiaUsuarioCon"));
+const MidiaUsuarioCon = lazy(() =>
+  import("./pages/midiaUsuario/MidiaUsuarioCon")
+);
 
 function App() {
   const [token, setToken] = useState([]);
-    useEffect(() => {
+  useEffect(() => {
     setToken(sessionStorage.getItem("token"));
   }, []);
   if (!token || token <= "") {
@@ -109,13 +111,16 @@ function Menu() {
       label: "Sair",
       icon: "pi pi-fw pi-power-off",
       command: () => {
-        sessionStorage.setItem("token", "");
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("userNome");
       },
       url: "/",
     },
   ];
+  let nome = sessionStorage.getItem("userNome").replace(/"/g, "");
+  const end = <h2 className="textNomeUser"> {nome} </h2>;
 
-  return <Menubar model={items} className="ui-menubar"/>;
+  return <Menubar model={items} className="ui-menubar" end={end} />;
 }
 
 export default App;

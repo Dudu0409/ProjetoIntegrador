@@ -70,7 +70,14 @@ function Menu() {
       url: "/",
     },
   ];
+  let nome = localStorage.getItem("userNome");
 
-  return <Menubar model={items} className="ui-menubar" />;
+  if (nome === null) {
+    localStorage.setItem("userNome", "Usuário");
+  }
+  
+  const end = <h2 className="textNomeUser"> {nome.replace(/"/g, "")} </h2>;
+
+  return <Menubar model={items} className="ui-menubar" end={end} />;
 }
 export default Menu;
