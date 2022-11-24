@@ -1,62 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
-import { AutoComplete } from "primereact/autocomplete";
-import MidiaSrv from "../midiaAll/MidiaAllSrv";
 import { Dropdown } from "primereact/dropdown";
 
 const MidiaUsuarioForm = (props) => {
   const favoritoOptions = ["Não", "Sim"];
   const statusOptions = ["Interesse", "Assistindo", "Concluído"];
-  const [midias, setMidias] = useState([]);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setMidiaUsuario({ ...props.midiaUsuario, [name]: value });
   };
 
-  useEffect(() => {
-    onClickAtualizarMidia();
-  }, []);
-
-  const onClickAtualizarMidia = () => {
-    MidiaSrv.listar()
-      .then((response) => {
-        setMidias(response.data);
-      })
-      .catch(() => {});
-  };
-
   const { handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log(props.midia);
     props.salvar();
-  };
-  const [filteredMidias, setFilteredMidias] = useState(null);
-
-  const searchMidia = (event) => {
-    setTimeout(() => {
-      let _filteredMidias;
-      if (!event.query.trim().length) {
-        _filteredMidias = [...midias];
-      } else {
-        _filteredMidias = midias.filter((midia) => {
-          return midia.titulo
-            .toLowerCase()
-            .startsWith(event.query.toLowerCase());
-        });
-      }
-
-      setFilteredMidias(_filteredMidias);
-    }, 250);
-  };
-
-  const itemTemplate1 = (item) => {
-    return (
-      <div>
-        <div>{item.titulo}</div>
-      </div>
-    );
   };
 
   return (
