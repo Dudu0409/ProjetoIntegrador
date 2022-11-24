@@ -50,18 +50,6 @@ const MidiaList = (props) => {
             borderColor: "#7B73F1",
           }}
         ></Button>
-        <span> </span>
-        <Button
-          label="Adicionar a Minha Lista"
-          type="button"
-          icon="pi pi-plus-circle"
-          className="p-button-rounded"
-          onClick={props.inserir}
-          style={{
-            backgroundColor: "#7B73F1",
-            borderColor: "#7B73F1",
-          }}
-        ></Button>
       </div>
 
       <div className="card removeBorda">
@@ -121,6 +109,17 @@ const MidiaList = (props) => {
                     icon="pi pi-search"
                     className="p-button-rounded"
                     onClick={() => props.getNotaMedia(row._id)}
+                    style={{
+                      backgroundColor: "#7B73F1",
+                      borderColor: "#7B73F1",
+                    }}
+                  ></Button>
+                  <span> </span>
+                  <Button
+                    type="button"
+                    icon="pi pi-plus-circle"
+                    className="p-button-rounded"
+                    onClick={() => props.inserir(row._id)}
                     style={{
                       backgroundColor: "#7B73F1",
                       borderColor: "#7B73F1",

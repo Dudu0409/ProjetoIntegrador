@@ -22,6 +22,9 @@ routes.use("/api", generoPublicRout);
 const usuarioPublicRout = require("./UsuarioPublicRout");
 routes.use("/api", usuarioPublicRout);
 
+const midiaUsuarioPublicRout = require("./MidiaUsuarioPublicRout");
+routes.use("/api", midiaUsuarioPublicRout);
+
 const jwt = require("jsonwebtoken");
 routes.use(function (req, res, next) {
     try {
@@ -45,8 +48,6 @@ routes.use(function (req, res, next) {
     }
 });
 
-const midiaUsuarioPublicRout = require("./MidiaUsuarioPublicRout");
-routes.use("/api", midiaUsuarioPublicRout);
 const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 const autorRout = require("./AutorRout");

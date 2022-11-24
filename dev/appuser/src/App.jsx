@@ -10,8 +10,10 @@ import AppRoutes from "./AppRoutes";
 
 function App() {
   const [userId, setUserId] = useState([]);
+  const [token, setToken] = useState([]);
   useEffect(() => {
     setUserId(localStorage.getItem("userId"));
+    setToken(localStorage.getItem("token"));
   }, []);
   return (
     <div className="app">

@@ -12,6 +12,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function MidiaCon() {
   const [midias, setMidias] = useState([]);
+  const [midia, setMidia] = useState();
   const initialState = {
     id: null,
     status: "",
@@ -46,7 +47,8 @@ function MidiaCon() {
       });
   };
 
-  const inserir = () => {
+  const inserir = (idMidia) => {
+    setMidia(idMidia);
     setMidiaUsuario(initialState);
     setEditando(true);
   };
@@ -54,6 +56,8 @@ function MidiaCon() {
   const salvar = () => {
     //inclusão
     if (midiaUsuario._id == null) {
+      midiaUsuario.midia = midia;
+      console.log(midiaUsuario);
       MidiaUsuarioSrv.incluir(midiaUsuario)
         .then((response) => {
           setEditando(false);

@@ -27,10 +27,9 @@ const MidiaUsuarioForm = (props) => {
       .catch(() => {});
   };
 
-  const {
-    handleSubmit,
-  } = useForm();
+  const { handleSubmit } = useForm();
   const onSubmit = (data) => {
+    console.log(props.midia);
     props.salvar();
   };
   const [filteredMidias, setFilteredMidias] = useState(null);
@@ -107,7 +106,7 @@ const MidiaUsuarioForm = (props) => {
               />
             </div>
           </div>
-          <br />
+          {/* <br />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <AutoComplete
@@ -124,7 +123,7 @@ const MidiaUsuarioForm = (props) => {
                 required
               />
             </div>
-          </div>
+          </div> */}
           <br />
           <div style={{ textAlign: "center" }}>
             <Button
