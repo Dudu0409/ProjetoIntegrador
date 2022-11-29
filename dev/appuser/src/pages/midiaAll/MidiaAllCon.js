@@ -57,7 +57,6 @@ function MidiaCon() {
     //inclusão
     if (midiaUsuario._id == null) {
       midiaUsuario.midia = midia;
-      console.log(midiaUsuario);
       MidiaUsuarioSrv.incluir(midiaUsuario)
         .then((response) => {
           setEditando(false);
@@ -71,7 +70,7 @@ function MidiaCon() {
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: e.message,
+            summary: "Mídia já cadastrada para o usuário!",
             life: 4000,
           });
         });
@@ -92,23 +91,6 @@ function MidiaCon() {
       acceptClassName: "p-button-danger",
       accept: () => excluirConfirm(_id),
     });
-  };
-  const getNotaMedia = (_id) => {
-    MidiaUsuarioSrv.notaMedia(_id)
-      .then((response) => {
-        toastRef.current.show({
-          severity: "success",
-          summary: `A nota média é: ${response.data}`,
-          life: 2000,
-        });
-      })
-      .catch((e) => {
-        toastRef.current.show({
-          severity: "error",
-          summary: e.message,
-          life: 4000,
-        });
-      });
   };
 
   const excluirConfirm = (_id) => {
@@ -139,7 +121,6 @@ function MidiaCon() {
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           excluir={excluir}
-          getNotaMedia={getNotaMedia}
         />
         <Toast ref={toastRef} />
       </div>

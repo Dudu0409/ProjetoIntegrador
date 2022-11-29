@@ -66,7 +66,7 @@ function MidiaUsuarioCon() {
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: e.message,
+            summary: "Mídia já cadastrada para o usuário!",
             life: 4000,
           });
         });

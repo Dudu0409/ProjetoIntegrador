@@ -14,36 +14,54 @@ module.exports = {
   incluir: async (req, res) => {
     let obj = new MidiaUsuario(req.body);
     let Nota = obj.nota;
-    Midia.findOne({ _id: obj.midia }, function (err, midia) {
-      if (err) {
-        res
-          .status(400)
-          .send(
-            "Erro ao buscar a mídia para atualizar a nota média e a quantidade de notas"
-          );
-      } else {
-        let qtdNotas = midia.qtdNotas;
-        let notaMedia = midia.notaMedia;
-        let novaNotaMedia = (notaMedia * qtdNotas + Nota) / (qtdNotas + 1);
-        Midia.updateOne(
-          { _id: obj.midia },
-          { notaMedia: novaNotaMedia, qtdNotas: qtdNotas + 1 },
-          function (err) {
+    MidiaUsuario.find(
+      { usuario: obj.usuario, midia: obj.midia },
+      (err, objetos) => {
+        if (err) {
+          res
+            .status(400)
+            .send({ message: "Erro ao incluir mídia do usuário"});
+        } else if (objetos.length > 0) {
+          res.status(406).send({
+            message: "Mídia já cadastrada para o usuário",
+          });
+        } else {
+          Midia.findOne({ _id: obj.midia }, function (err, midia) {
             if (err) {
               res
                 .status(400)
                 .send(
-                  "Erro ao atualizar a nota média e a quantidade de notas da mídia"
+                  "Erro ao buscar a mídia para atualizar a nota média e a quantidade de notas"
                 );
             } else {
-              obj.save((err, obj) => {
-                err ? res.status(400).send(err) : res.status(200).json(obj);
-              });
+              let qtdNotas = midia.qtdNotas;
+              let notaMedia = midia.notaMedia;
+              let novaNotaMedia =
+                (notaMedia * qtdNotas + Nota) / (qtdNotas + 1);
+              Midia.updateOne(
+                { _id: obj.midia },
+                { notaMedia: novaNotaMedia, qtdNotas: qtdNotas + 1 },
+                function (err) {
+                  if (err) {
+                    res
+                      .status(400)
+                      .send(
+                        "Erro ao atualizar a nota média e a quantidade de notas da mídia"
+                      );
+                  } else {
+                    obj.save((err, obj) => {
+                      err
+                        ? res.status(400).send(err)
+                        : res.status(200).json(obj);
+                    });
+                  }
+                }
+              );
             }
-          }
-        );
+          });
+        }
       }
-    });
+    );
   },
   alterar: async (req, res) => {
     let obj = new MidiaUsuario(req.body);

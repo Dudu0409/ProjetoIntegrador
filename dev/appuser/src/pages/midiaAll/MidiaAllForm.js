@@ -64,24 +64,6 @@ const MidiaUsuarioForm = (props) => {
               />
             </div>
           </div>
-          {/* <br />
-          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
-            <div className="field col-4 md:col-4">
-              <AutoComplete
-                name="midia"
-                value={props.midiaUsuario.midia}
-                suggestions={filteredMidias}
-                completeMethod={searchMidia}
-                onChange={handleInputChange}
-                field="titulo"
-                dropdown
-                forceSelection
-                itemTemplate={itemTemplate1}
-                placeholder="Mídia..."
-                required
-              />
-            </div>
-          </div> */}
           <br />
           <div style={{ textAlign: "center" }}>
             <Button
