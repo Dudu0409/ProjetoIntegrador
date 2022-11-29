@@ -6,6 +6,8 @@ const MidiaSchema = new mongoose.Schema({
   dataLancamento: { type: Date, required: true },
   imagem: { type: String, required: false },
   numeroCronologico: { type: Number, required: true },
+  notaMedia: { type: Number, required: false, default: 0 },
+  qtdNotas: { type: Number, required: false, default: 0 },
   tipoMidia: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "TipoMidia",

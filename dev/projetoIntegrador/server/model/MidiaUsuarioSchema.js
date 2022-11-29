@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const MidiaUsuarioSchema = new mongoose.Schema({
   status: { type: String, required: true },
   favorito: { type: String, default: "Não" },
-  nota: { type: Number, required: true },
+  nota: { type: Number, required: true, default: 0 },
   comentario: { type: String, required: false },
   midia: {
     type: mongoose.Schema.Types.ObjectId,

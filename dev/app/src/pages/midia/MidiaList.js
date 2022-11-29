@@ -109,6 +109,8 @@ const MidiaList = (props) => {
             filter
           ></Column>
           <Column field="autor.nome" header="Autor" sortable filter></Column>
+          <Column field="notaMedia" header="Nota Média" sortable></Column>
+          <Column field="qtdNotas" header="QTD" sortable></Column>
           <Column
             header="Operações"
             body={(row) => {

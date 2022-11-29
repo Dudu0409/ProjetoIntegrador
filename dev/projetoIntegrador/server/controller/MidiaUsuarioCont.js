@@ -1,4 +1,5 @@
 const MidiaUsuario = require("../model/MidiaUsuarioSchema");
+const Midia = require("../model/MidiaSchema");
 
 module.exports = {
   listar: async (req, res) => {
@@ -12,19 +13,168 @@ module.exports = {
 
   incluir: async (req, res) => {
     let obj = new MidiaUsuario(req.body);
-    obj.save((err, obj) => {
-      err ? res.status(400).send(err) : res.status(200).json(obj);
+    let Nota = obj.nota;
+    Midia.findOne({ _id: obj.midia }, function (err, midia) {
+      if (err) {
+        res
+          .status(400)
+          .send(
+            "Erro ao buscar a mídia para atualizar a nota média e a quantidade de notas"
+          );
+      } else {
+        let qtdNotas = midia.qtdNotas;
+        let notaMedia = midia.notaMedia;
+        let novaNotaMedia = (notaMedia * qtdNotas + Nota) / (qtdNotas + 1);
+        Midia.updateOne(
+          { _id: obj.midia },
+          { notaMedia: novaNotaMedia, qtdNotas: qtdNotas + 1 },
+          function (err) {
+            if (err) {
+              res
+                .status(400)
+                .send(
+                  "Erro ao atualizar a nota média e a quantidade de notas da mídia"
+                );
+            } else {
+              obj.save((err, obj) => {
+                err ? res.status(400).send(err) : res.status(200).json(obj);
+              });
+            }
+          }
+        );
+      }
     });
   },
   alterar: async (req, res) => {
     let obj = new MidiaUsuario(req.body);
-    MidiaUsuario.updateOne({ _id: obj._id }, obj, function (err) {
-      err ? res.status(400).send(err) : res.status(200).json(obj);
+    let Nota = obj.nota;
+    MidiaUsuario.findOne({ _id: obj._id }, function (err, midiaUsuario) {
+      if (err) {
+        res.status(400).send("Erro ao buscar a mídia para atualizar a nota");
+      } else {
+        let NotaAntiga = midiaUsuario.nota;
+        Midia.findOne({ _id: obj.midia }, function (err, midia) {
+          if (err) {
+            res
+              .status(400)
+              .send(
+                "Erro ao buscar a mídia do usuário para atualizar a nota média e a quantidade de notas"
+              );
+          } else {
+            let qtdNotas = midia.qtdNotas;
+            let notaMedia = midia.notaMedia;
+            let novaNotaMedia =
+              (notaMedia * qtdNotas - NotaAntiga + Nota) / qtdNotas;
+            Midia.updateOne(
+              { _id: obj.midia },
+              { notaMedia: novaNotaMedia },
+              function (err) {
+                if (err) {
+                  res
+                    .status(400)
+                    .send(
+                      "Erro ao atualizar a nota média e a quantidade de notas da mídia"
+                    );
+                } else {
+                  MidiaUsuario.updateOne({ _id: obj._id }, obj, function (err) {
+                    if (err) {
+                      res
+                        .status(400)
+                        .send("Erro ao atualizar a mídia do usuário");
+                    } else {
+                      res
+                        .status(200)
+                        .send("Mídia do usuário atualizada com sucesso");
+                    }
+                  });
+                }
+              }
+            );
+          }
+        });
+      }
     });
   },
   excluir: async (req, res) => {
-    MidiaUsuario.deleteOne({ _id: req.params.id }, function (err) {
-      err ? res.status(400).send(err) : res.status(200).json("message:ok");
+    MidiaUsuario.findOne({ _id: req.params.id }, function (err, midiaUsuario) {
+      if (err) {
+        res.status(400).send("Erro ao buscar a mídia para excluir a nota");
+      } else {
+        let Nota = midiaUsuario.nota;
+        Midia.findOne({ _id: midiaUsuario.midia }, function (err, midia) {
+          if (err) {
+            res
+              .status(400)
+              .send(
+                "Erro ao buscar a mídia do usuário para excluir a nota média e a quantidade de notas"
+              );
+          } else {
+            let qtdNotas = midia.qtdNotas;
+            let notaMedia = midia.notaMedia;
+            let novaNotaMedia = (notaMedia * qtdNotas - Nota) / (qtdNotas - 1);
+            if (qtdNotas === 1) {
+              Midia.updateOne(
+                { _id: midiaUsuario.midia },
+                { notaMedia: 0, qtdNotas: 0 },
+                function (err) {
+                  if (err) {
+                    res
+                      .status(400)
+                      .send(
+                        "Erro ao excluir a nota média e a quantidade de notas da mídia"
+                      );
+                  } else {
+                    MidiaUsuario.deleteOne(
+                      { _id: req.params.id },
+                      function (err) {
+                        if (err) {
+                          res
+                            .status(400)
+                            .send("Erro ao excluir a mídia do usuário");
+                        } else {
+                          res
+
+                            .status(200)
+                            .send("Mídia do usuário excluída com sucesso");
+                        }
+                      }
+                    );
+                  }
+                }
+              );
+            } else {
+              Midia.updateOne(
+                { _id: midiaUsuario.midia },
+                { notaMedia: novaNotaMedia, qtdNotas: qtdNotas - 1 },
+                function (err) {
+                  if (err) {
+                    res
+                      .status(400)
+                      .send(
+                        "Erro ao excluir a nota média e a quantidade de notas da mídia"
+                      );
+                  } else {
+                    MidiaUsuario.deleteOne(
+                      { _id: req.params.id },
+                      function (err) {
+                        if (err) {
+                          res
+                            .status(400)
+                            .send("Erro ao excluir a mídia do usuário");
+                        } else {
+                          res
+                            .status(200)
+                            .send("Mídia do usuário excluída com sucesso");
+                        }
+                      }
+                    );
+                  }
+                }
+              );
+            }
+          }
+        });
+      }
     });
   },
   obterPeloId: (req, res) => {
