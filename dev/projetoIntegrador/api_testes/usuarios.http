@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api/usuarios
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4ODA2MjE1LCJleHAiOjE2Njg4MDk4MTV9.5VeOSnxP8Z_7QjeFPINJ6ExYdM0b0_AXIgAp91KuRtw
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY5ODU2Mzc0LCJleHAiOjE2NzM0NTYzNzR9.XXn_ycReX0vB7n-m5w5mir8XJ3kwuP2u62XS5iTw2b4
 
 # Listar usuários
 GET {{apiUrl}}
@@ -53,7 +53,7 @@ x-auth-token: {{authToken}}
 ###
 
 # Autenticação de usuário
-POST http://localhost:3000/api/login
+POST http://localhost:3000/api/loginPublic
 Content-Type: application/json
 
 {
@@ -63,24 +63,11 @@ Content-Type: application/json
 ###
 
 # Autenticação de usuário ADMIN
-POST http://localhost:3000/api/loginPublic
+POST http://localhost:3000/api/loginAdmin
 Content-Type: application/json
 
 {
  "email": "185961@upf.br",
  "senha": "123"
-}
-###
-
-# Registrar sem token
-POST http://localhost:3000/api/register
-Content-Type: application/json
-x-auth-token: {{authToken}}
-
-{
- "nome": "Teste", 
- "email": "teste123@upf.br",
- "senha": "123",
- "dataNascimento": "04/09/2001"
 }
 ###

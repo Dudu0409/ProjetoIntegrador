@@ -154,7 +154,9 @@ const MidiaForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
-          <h5 className="textWhite" style={{ textAlign: "center" }}>Cadastro de Mídias</h5>
+          <h5 className="textWhite" style={{ textAlign: "center" }}>
+            Cadastro de Mídias
+          </h5>
           <p />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
@@ -216,6 +218,7 @@ const MidiaForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
+                type="number"
                 name="restricaoIdade"
                 placeholder="Restrição de Idade..."
                 {...register("restricaoIdade", {
@@ -262,6 +265,7 @@ const MidiaForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div className="field col-4 md:col-4">
               <InputText
+                type="number"
                 name="numeroCronologico"
                 placeholder="Número Cronológico..."
                 {...register("numeroCronologico", {
@@ -355,12 +359,35 @@ const MidiaForm = (props) => {
           </div>
           <br />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <InputText
+                name="notaMedia"
+                placeholder="Nota Média..."
+                defaultValue={props.midia.notaMedia}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
+            <div className="field col-4 md:col-4">
+              <InputText
+                type="number"
+                name="qtdNotas"
+                placeholder="Quantidade de Notas..."
+                defaultValue={props.midia.qtdNotas}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "40%" }}>
             <div
               className="field col-4 md:col-4"
               style={{ textAlign: "center" }}
             >
               <input
-              className="textWhite"
+                className="textWhite"
                 type="file"
                 name="imagem"
                 id="imagem"

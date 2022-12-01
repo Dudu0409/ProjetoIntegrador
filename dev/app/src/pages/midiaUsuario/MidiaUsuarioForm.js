@@ -38,9 +38,7 @@ const MidiaUsuarioForm = (props) => {
       .catch(() => {});
   };
 
-  const {
-    handleSubmit,
-  } = useForm();
+  const { handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
     props.salvar();

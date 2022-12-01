@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:3000/api/midias
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY4NTM0NTc1LCJleHAiOjE2Njg1MzgxNzV9.8_upnj5OooD1LR2egsi2I5kB40udy4-eqyX9Fvf_5vE
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM2MWMxZDg1NGRjOGQ1N2E0NmFjMTIiLCJub21lIjoiRWR1YXJkbyBCb25hbWlnbyBCaWFuY2hldHRpIiwiaWF0IjoxNjY5ODU2Mzc0LCJleHAiOjE2NzM0NTYzNzR9.XXn_ycReX0vB7n-m5w5mir8XJ3kwuP2u62XS5iTw2b4
 # Listar midias
 GET {{apiUrl}}
 Content-Type: application/json

@@ -19,7 +19,7 @@ const MidiaList = (props) => {
           <img
             alt="img"
             src={imagem}
-            width={32}
+            width={45}
             style={{ verticalAlign: "middle" }}
           />
         </React.Fragment>
@@ -126,7 +126,6 @@ const MidiaList = (props) => {
                       borderColor: "#7B73F1",
                     }}
                   ></Button>
-                  <span> </span>
                   <Button
                     type="button"
                     icon="pi pi-trash"

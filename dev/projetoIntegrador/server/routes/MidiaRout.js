@@ -8,6 +8,4 @@ routes.route("/midias").put(controle.alterar);
 routes.route("/midias/:id").delete(controle.excluir);
 routes.route("/midias/:id").get(controle.obterPeloId);
 routes.route("/midias/filtro/:filtro").get(controle.filtrar);
-routes.route("/midias/genero/:id").get(controle.filtrarPorGenero);
-routes.route("/midias/tipoMidia/:id").get(controle.filtrarPorTipoMidia);
 module.exports = routes;

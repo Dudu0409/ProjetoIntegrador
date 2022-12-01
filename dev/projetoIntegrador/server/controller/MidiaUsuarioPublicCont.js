@@ -17,9 +17,7 @@ module.exports = {
       { usuario: obj.usuario, midia: obj.midia },
       (err, objetos) => {
         if (err) {
-          res
-            .status(400)
-            .send({ message: "Erro ao incluir mídia do usuário"});
+          res.status(400).send({ message: "Erro ao incluir mídia do usuário" });
         } else if (objetos.length > 0) {
           res.status(406).send({
             message: "Mídia já cadastrada para o usuário",
@@ -39,7 +37,7 @@ module.exports = {
                 (notaMedia * qtdNotas + Nota) / (qtdNotas + 1);
               Midia.updateOne(
                 { _id: obj.midia },
-                { notaMedia: novaNotaMedia, qtdNotas: qtdNotas + 1 },
+                { notaMedia: novaNotaMedia.toFixed(2), qtdNotas: qtdNotas + 1 },
                 function (err) {
                   if (err) {
                     res
@@ -84,7 +82,7 @@ module.exports = {
               (notaMedia * qtdNotas - NotaAntiga + Nota) / qtdNotas;
             Midia.updateOne(
               { _id: obj.midia },
-              { notaMedia: novaNotaMedia },
+              { notaMedia: novaNotaMedia.toFixed(2) },
               function (err) {
                 if (err) {
                   res
@@ -162,7 +160,7 @@ module.exports = {
             } else {
               Midia.updateOne(
                 { _id: midiaUsuario.midia },
-                { notaMedia: novaNotaMedia, qtdNotas: qtdNotas - 1 },
+                { notaMedia: novaNotaMedia.toFixed(2), qtdNotas: qtdNotas - 1 },
                 function (err) {
                   if (err) {
                     res
@@ -214,21 +212,6 @@ module.exports = {
       .populate("usuario")
       .sort({ status: -1 });
   },
-  favoritar: async (req, res) => {
-    var midiaFavorita = await MidiaUsuario.findOne({ _id: req.params.id });
-    if (midiaFavorita.favorito === "Não") {
-      midiaFavorita.favorito = "Sim";
-    } else {
-      midiaFavorita.favorito = "Não";
-    }
-    MidiaUsuario.updateOne(
-      { _id: midiaFavorita._id },
-      midiaFavorita,
-      function (err) {
-        err ? res.status(400).send(err) : res.status(200).json("message:ok");
-      }
-    );
-  },
   listarFavoritos: async (req, res) => {
     MidiaUsuario.find(
       { usuario: req.params.id, favorito: "Sim" },
@@ -239,21 +222,6 @@ module.exports = {
       .populate("midia")
       .populate("usuario")
       .sort({ status: 1 });
-  },
-  notaMedia: async (req, res) => {
-    try {
-      var midia = await MidiaUsuario.find({ midia: req.params.id });
-      var soma = 0;
-      var media = 0;
-      for (var i = 0; i < midia.length; i++) {
-        soma = soma + midia[i].nota;
-      }
-      media = soma / midia.length;
-      media = parseFloat(media.toFixed(2));
-      res.status(200).json(media);
-    } catch (error) {
-      res.status(400).send(error);
-    }
   },
   listarPorUsuario: async (req, res) => {
     MidiaUsuario.find({ usuario: req.params.id }, function (err, obj) {

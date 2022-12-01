@@ -19,7 +19,7 @@ const MidiaList = (props) => {
           <img
             alt="img"
             src={imagem}
-            width={32}
+            width={45}
             style={{ verticalAlign: "middle" }}
           />
         </React.Fragment>

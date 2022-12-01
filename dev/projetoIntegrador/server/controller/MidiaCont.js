@@ -57,24 +57,4 @@ module.exports = {
       .populate("genero")
       .sort({ titulo: -1 });
   },
-
-  filtrarPorGenero: (req, res) => {
-    Midia.find({ genero: req.params.id }, function (err, obj) {
-      err ? res.status(400).send(err) : res.status(200).json(obj);
-    })
-      .populate("tipoMidia")
-      .populate("autor")
-      .populate("genero")
-      .sort({ titulo: -1 });
-  },
-
-  filtrarPorTipoMidia: (req, res) => {
-    Midia.find({ tipoMidia: req.params.id }, function (err, obj) {
-      err ? res.status(400).send(err) : res.status(200).json(obj);
-    })
-      .populate("tipoMidia")
-      .populate("autor")
-      .populate("genero")
-      .sort({ titulo: -1 });
-  },
 };

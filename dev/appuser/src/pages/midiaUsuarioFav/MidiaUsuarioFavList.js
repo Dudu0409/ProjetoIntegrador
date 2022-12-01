@@ -5,6 +5,27 @@ import { Button } from "primereact/button";
 import "../../css/visual.css";
 
 const MidiaUsuarioList = (props) => {
+  const imagemTemplate = (rowData) => {
+    const imagem = rowData.midia.imagem;
+      if (!imagem || imagem === " ") {
+        return (
+          <React.Fragment>
+            <div>Sem Capa</div>
+          </React.Fragment>
+        );
+      } else {
+        return (
+          <React.Fragment>
+            <img
+              alt="img"
+              src={imagem}
+              width={45}
+              style={{ verticalAlign: "middle" }}
+            />
+          </React.Fragment>
+        );
+      }
+    };
   return (
     <div className="App">
       <h4 className="textWhite">Minhas mídias favoritas</h4>
@@ -35,7 +56,8 @@ const MidiaUsuarioList = (props) => {
           selection={props.midiaUsuario}
           onSelectionChange={(e) => props.setMidiaUsuario(e.value)}
         >
-          <Column field="midia.titulo" header="Mídia" sortable filter></Column>
+          <Column field="midia.imagem" header="Capa" body={imagemTemplate}></Column>
+          <Column field="midia.titulo" header="Título" sortable filter></Column>
           <Column field="status" header="Status" sortable filter></Column>
           <Column field="favorito" header="Favorito" sortable filter></Column>
           <Column field="nota" header="Nota" sortable filter></Column>
